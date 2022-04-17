@@ -88,6 +88,11 @@
   ### PoC Video 
  1. https://youtu.be/i3JAHcsWwu0 (old video)
 
+### ❤️Supporters❤️
+[![Stargazers repo roster for @th30neand0nly/AIRAVAT](https://reporoster.com/stars/dark/Th30neAnd0nly/AIRAVAT)](https://github.com/Th30neAnd0nly/AIRAVAT/stargazers)
+
+[![Forkers repo roster for @th30neand0nly/AIRAVAT](https://reporoster.com/forks/dark/Th30neAnd0nly/AIRAVAT)](https://github.com/Th30neAnd0nly/AIRAVAT/network/members)
+
 ## AIRAVAT PRO <img src='WEB PANEL/img/logo.png' style="height:30px;width:30px;" >
  1. Read , Delete files from victim's device
  1. Encrypt any file in victim's device
@@ -97,7 +102,18 @@
  1. Auto Start Permission for all chinese vendors.
  1. Hidden App without Foreground service notification (full stealth mode)
 
- 
+## Contact Info 
+ 1. [Telegram](https://t.me/th30neand0nly)
+
+
+## DISCLAIMER
+<p align="center">
+ TO BE USED FOR EDUCATIONAL PURPOSES ONLY
+</p>
+
+
+The use of the AIRAVAT is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program. Please read [LICENSE](LICENSE).
+
 
 
 
