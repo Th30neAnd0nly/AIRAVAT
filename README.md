@@ -85,8 +85,19 @@
        ```
  1. Now compile the code with appt2.
  1. Install the app in victim's device and give all the permissions after that the connection will show up in web panel.
+  ### PoC Video 
+ 1. https://youtu.be/i3JAHcsWwu0 (old video)
 
+## AIRAVAT PRO <img src='WEB PANEL/img/logo.png' style="height:30px;width:30px;" >
+ 1. Read , Delete files from victim's device
+ 1. Encrypt any file in victim's device
+ 1. Capture Photo from Camera
+ 1. Get Sim Card Information
+ 1. Ransomware (encrypt all the files and show the notification demanding for ransom)
+ 1. Auto Start Permission for all chinese vendors.
+ 1. Hidden App without Foreground service notification (full stealth mode)
 
+ 
 
 
 
