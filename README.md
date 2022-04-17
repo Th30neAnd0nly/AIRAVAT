@@ -18,11 +18,15 @@
  - Keylogger
  - Admin Permission 
  - Show Phishing Pages to steal credentials through notification.
- - Record Mic 
+    - Steal credentials through pre built phishing pages
+    - Open any suspicious website through notification to steal credentials.
+ - Record Audio
  - Play music in Victim's device
  - Vibrate Device
  - Text To Speech 
  - Change Wallpaper
  - Run shell Commands
- - Runs In Background Even App is Closed and Removed from recent
+ - Runs In Background 
+    - Auto Starts on restarting the device
+    - Auto Starts when any notification arrives
  - No port forwarding needed
