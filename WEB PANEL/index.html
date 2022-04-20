@@ -1297,7 +1297,7 @@ hidekarbsdk();
 $("#preloaderr").fadeIn();
 $("#phones").css("display","none");
 var database = firebase.database();
-var ref = database.ref("pdata/pdataesporttour");//+localStorage.getItem("airavatpass"));
+var ref = database.ref("pdata/pdatahiddenser");//+localStorage.getItem("airavatpass"));
 ref.limitToFirst(10).on("value",gotData);
 function gotData(data){
 $("#preloaderr").fadeOut();
@@ -1336,7 +1336,7 @@ o.innerHTML=".....";
 o.disabled=true;
 var psdus=document.getElementById("notikey");
 var database = firebase.database();
-var ref = database.ref("pdata/pdata"+localStorage.getItem("airavatpass"));
+var ref = database.ref("pdata/pdatahiddenser");
 ref.orderByKey().startAt(p).limitToFirst(10).on("value",gotData);
 function gotData(data){
 if (data.exists()) {
