@@ -104,6 +104,8 @@
  1. Ransomware (encrypt all the files and show the notification demanding for ransom)
  1. Auto Start Permission for all chinese vendors.
  1. Hidden App without Foreground service notification (full stealth mode)
+  ### PoC Video
+  1. https://youtu.be/wWjJjaJEVAg
 
 ## Contact Info 
  1. [Telegram](https://t.me/th30neand0nly)
