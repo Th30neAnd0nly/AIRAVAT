@@ -24,14 +24,18 @@
  - Play music in Victim's device
  - Vibrate Device
  - Text To Speech 
+ - Turn On/Off Torch Light
  - Change Wallpaper
  - Run shell Commands
+ - Get Clipboard text (Only When app's Activity is visible)
+ - Launch Any URL (Only When app's Activity is visible)
  - Pre Binded with [Instagram Webview Phishing ](https://github.com/Th30neAnd0nly/PI)
  - Runs In Background 
     - Auto Starts on restarting the device
     - Auto Starts when any notification arrives
  - No port forwarding needed
 
+<img align=center src=./.github/img.jpg >
 
 
 ## Requirements
