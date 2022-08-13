@@ -20,7 +20,7 @@
  - Show Phishing Pages to steal credentials through notification.
     - Steal credentials through pre built phishing pages
     - Open any suspicious website through notification to steal credentials.
- - Record Audio
+ - Record Audio through Mic
  - Play music in Victim's device
  - Vibrate Device
  - Text To Speech 
@@ -104,7 +104,7 @@
  1. Read , Delete files from victim's device
  1. Encrypt any file in victim's device
  1. Lock Victims Device with 4 digit Pin Code
- 1. Capture Photo from Camera
+ 1. Capture Photo from Front and Back Camera<!-- 1. Capture Screenshot (finite) 1. Record Incoming and Outgoing Calls (finite)-->
  1. Get Sim Card Information
  1. Ransomware (encrypt all the files and show the notification demanding for ransom)
  1. Auto Start Permission for all chinese vendors.
