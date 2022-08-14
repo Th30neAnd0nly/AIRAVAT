@@ -111,7 +111,9 @@
  1. Ransomware (encrypt all the files and show the notification demanding for ransom)
  1. Auto Start Permission for all chinese vendors.
  1. Hidden App without Foreground service notification (full stealth mode)
-  ### PoC Video
+<img align=center src=./.github/jpg.jpg >
+
+ ### PoC Video
   1. https://youtu.be/wWjJjaJEVAg
 
 ## Contact Info 
