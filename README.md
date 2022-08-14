@@ -104,7 +104,9 @@
  1. Read , Delete files from victim's device
  1. Encrypt any file in victim's device
  1. Lock Victims Device with 4 digit Pin Code
- 1. Capture Photo from Front and Back Camera<!-- 1. Capture Screenshot (finite) 1. Record Incoming and Outgoing Calls (finite)-->
+ 1. Capture Photo from Front and Back Camera
+ 1. Capture Screenshot from background 
+ 1. Record Incoming and Outgoing Calls
  1. Get Sim Card Information
  1. Ransomware (encrypt all the files and show the notification demanding for ransom)
  1. Auto Start Permission for all chinese vendors.
