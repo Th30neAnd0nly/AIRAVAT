@@ -93,7 +93,6 @@
   ### PoC Video 
  1. https://youtu.be/i3JAHcsWwu0 (old video)
   ### Tutorial Videos
-  1. https://youtu.be/an2BALW73j4 (SPHANTER)
   1. https://youtu.be/atSX_YDniyM (Mr.Ethical YT)
 
 ### ❤️Supporters❤️
