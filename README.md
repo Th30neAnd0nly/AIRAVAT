@@ -6,6 +6,13 @@
 
 #### A multifunctional Android RAT with GUI based Web Panel without port forwarding.
 
+<div align="center">
+
+[![https://telegram.me/th30neand0nly0ne](https://img.shields.io/badge/Telegram-Channel-orange.svg?style=flat-square)](https://telegram.me/th30neand0nly0ne)
+[![https://telegram.me/th30neand0nly](https://img.shields.io/badge/Telegram-@th30neand0nly-blue.svg?style=flat-square)](https://telegram.me/th30neand0nly)
+
+</div>
+
 ## Features
  - Read all the files of Internal Storage
  - Download Any Media to your Device from Victims Device
@@ -115,9 +122,6 @@
 
  ### PoC Video
   1. https://t.me/th30neand0nly0ne/21
-
-## Contact Info 
- 1. [Telegram](https://t.me/th30neand0nly)
 
 
 ## DISCLAIMER
