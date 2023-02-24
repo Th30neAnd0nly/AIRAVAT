@@ -97,8 +97,6 @@
        ```
  1. Now compile the code with appt2.
  1. Install the app in victim's device and give all the permissions after that the connection will show up in web panel.
-  ### PoC Video 
- 1. ~~https://youtu.be/i3JAHcsWwu0 (old video)~~
   ### Tutorial Videos
   1. https://t.me/AiravatRat/3 (Mr.Ethical YT)
 
