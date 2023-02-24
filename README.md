@@ -107,21 +107,6 @@
 
 [![Forkers repo roster for @th30neand0nly/AIRAVAT](https://reporoster.com/forks/dark/Th30neAnd0nly/AIRAVAT)](https://github.com/Th30neAnd0nly/AIRAVAT/network/members)
 
-## AIRAVAT PRO <img src='WEB PANEL/img/logo.png' style="height:30px;width:30px;" >
- 1. Read , Delete files from victim's device
- 1. Encrypt any file in victim's device
- 1. Lock Victims Device with 4 digit Pin Code
- 1. Capture Photo from Front and Back Camera
- 1. Capture Screenshot from background 
- 1. Automatically Record Incoming and Outgoing Calls
- 1. Get Sim Card Information
- 1. Ransomware (encrypt all the files and show the notification demanding for ransom)
- 1. Auto Start Permission for all chinese vendors.
- 1. Hidden App without Foreground service notification (full stealth mode)
-<img align=center src=./.github/jpg.jpg >
-
- ### PoC Video
-  1. https://t.me/th30neand0nly0ne/21
 
 
 ## DISCLAIMER
