@@ -98,9 +98,9 @@
   1. To be updated...
 
 ### ❤️Supporters❤️
-[![Stargazers repo roster for @th30neand0nly/AIRAVAT](https://reporoster.com/stars/dark/Th30neAnd0nly/AIRAVAT)](https://github.com/Th30neAnd0nly/AIRAVAT/stargazers)
+[![Stargazers repo roster for @th30neand0nly/AIRAVAT](http://reporoster.com/stars/dark/Th30neAnd0nly/AIRAVAT)](https://github.com/Th30neAnd0nly/AIRAVAT/stargazers)
 
-[![Forkers repo roster for @th30neand0nly/AIRAVAT](https://reporoster.com/forks/dark/Th30neAnd0nly/AIRAVAT)](https://github.com/Th30neAnd0nly/AIRAVAT/network/members)
+[![Forkers repo roster for @th30neand0nly/AIRAVAT](http://reporoster.com/forks/dark/Th30neAnd0nly/AIRAVAT)](https://github.com/Th30neAnd0nly/AIRAVAT/network/members)
 
 
 
